@@ -107,10 +107,10 @@ function SectionKicker({ children }: { children: React.ReactNode }) {
 
 function Nav() {
   const links = [
-    { label: "Home", href: "#top" },
+    { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "#services" },
-    { label: "Works", href: "#works" },
+    { label: "Services", href: "/services" },
+    { label: "Projects", href: "/projects" },
   ];
 
   return (
@@ -129,7 +129,7 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <Pill>Contact us</Pill>
+        <Pill href="/contact">Contact us</Pill>
       </Container>
     </header>
   );

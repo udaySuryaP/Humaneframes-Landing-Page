@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import LegalPage from "@/components/LegalPage";
+import FramerMirror from "@/components/FramerMirror";
 import { legalPages } from "@/lib/site-content";
 
 export function generateStaticParams() {
@@ -13,5 +13,5 @@ export default async function Legal({ params }: { params: Promise<{ slug: string
     notFound();
   }
 
-  return <LegalPage slug={slug as keyof typeof legalPages} />;
+  return <FramerMirror route={`/legal/${slug}`} />;
 }

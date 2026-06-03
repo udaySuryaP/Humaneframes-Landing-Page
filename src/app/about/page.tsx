@@ -1,5 +1,5 @@
-import AboutPage from "@/components/AboutPage";
+import FramerMirror from "@/components/FramerMirror";
 
 export default function About() {
-  return <AboutPage />;
+  return <FramerMirror route="/about" />;
 }

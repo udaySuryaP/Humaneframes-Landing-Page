@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ProjectDetailPage from "@/components/ProjectDetailPage";
+import FramerMirror from "@/components/FramerMirror";
 import { projects } from "@/lib/site-content";
 
 export function generateStaticParams() {
@@ -13,5 +13,5 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
     notFound();
   }
 
-  return <ProjectDetailPage slug={slug} />;
+  return <FramerMirror route={`/projects/${slug}`} />;
 }

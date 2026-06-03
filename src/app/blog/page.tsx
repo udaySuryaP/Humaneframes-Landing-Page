@@ -1,5 +1,5 @@
-import BlogPage from "@/components/BlogPage";
+import FramerMirror from "@/components/FramerMirror";
 
 export default function Page() {
-  return <BlogPage />;
+  return <FramerMirror route="/blog" />;
 }

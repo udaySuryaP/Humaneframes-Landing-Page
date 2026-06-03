@@ -1,5 +1,5 @@
-import ServicesPage from "@/components/ServicesPage";
+import FramerMirror from "@/components/FramerMirror";
 
 export default function Services() {
-  return <ServicesPage />;
+  return <FramerMirror route="/services" />;
 }

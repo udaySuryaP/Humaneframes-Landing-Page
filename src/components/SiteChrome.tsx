@@ -73,7 +73,7 @@ export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
         </div>
 
         <div className="mt-32 flex flex-col gap-5 border-t border-black/10 pt-10 text-[11px] font-medium leading-none tracking-[-0.03em] sm:flex-row sm:items-center sm:justify-between">
-          <p>(c) 2026 Humaneframes. All rights reserved.</p>
+          <p>© 2026 Humaneframes. All rights reserved.</p>
           <p>
             <Link href="/legal/terms-of-service">Terms of Service</Link>
             &nbsp;&nbsp;&nbsp;

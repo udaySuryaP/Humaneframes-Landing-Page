@@ -81,7 +81,7 @@ export const projects = [
     image: "/images/content-production-collage.svg",
   },
   {
-    name: "Destrezza",
+    name: "Destrezzza",
     tags: ["Fashion Reels", "Visual Direction", "Editorial"],
     context:
       "Fashion-led visual direction with movement, styling, and repeatable formats for social publishing.",

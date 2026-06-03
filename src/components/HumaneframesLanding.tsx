@@ -75,7 +75,7 @@ const footerLinks = {
 };
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`mx-auto w-full max-w-[1180px] px-5 sm:px-7 lg:px-8 ${className}`}>{children}</div>;
+  return <div className={`mx-auto w-full max-w-[1376px] px-4 sm:px-7 lg:px-8 ${className}`}>{children}</div>;
 }
 
 function Pill({
@@ -90,19 +90,24 @@ function Pill({
   return (
     <a
       href={href}
-      className={`inline-flex h-7 items-center rounded-full px-3 text-[10px] font-semibold leading-none transition-colors ${
+      className={`inline-flex h-[31px] items-center gap-1 rounded-full px-4 text-[11px] font-semibold leading-none tracking-[-0.02em] transition-colors ${
         variant === "dark"
           ? "bg-black text-white hover:bg-black/75"
           : "border border-black/20 bg-transparent text-black hover:border-black"
       }`}
     >
       {children}
+      {variant === "dark" && <span className="h-1 w-1 rounded-full bg-[#d71916]" />}
     </a>
   );
 }
 
 function SectionKicker({ children }: { children: React.ReactNode }) {
-  return <p className="mb-2 text-[10px] font-medium uppercase leading-none tracking-[0.08em] text-[#cf221b]">{children}</p>;
+  return (
+    <p className="mb-4 text-[10px] font-medium uppercase leading-none tracking-[-0.015em] text-black">
+      [<span className="text-[#d71916]">{children}</span>]
+    </p>
+  );
 }
 
 function Nav() {
@@ -114,12 +119,12 @@ function Nav() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#f3f3f1]/90 backdrop-blur-sm">
-      <Container className="flex h-12 items-center justify-between">
-        <a href="#top" className="text-[11px] font-bold leading-none tracking-[-0.03em]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f3f3f1]/95 backdrop-blur-sm">
+      <Container className="flex h-[82px] items-center justify-between max-md:h-[64px]">
+        <a href="#top" className="text-[15px] font-bold leading-none tracking-[-0.05em] max-md:text-[12px]">
           Humaneframes.
         </a>
-        <nav className="hidden items-center gap-5 text-[10px] font-medium leading-none md:flex">
+        <nav className="hidden items-center gap-9 text-[12px] font-semibold leading-none tracking-[-0.035em] md:flex">
           {links.map((link, index) => (
             <a key={link.label} href={link.href} className="relative hover:opacity-60">
               {link.label}
@@ -129,7 +134,16 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <Pill href="/contact">Contact us</Pill>
+        <div className="hidden md:block">
+          <Pill href="/contact">Contact us</Pill>
+        </div>
+        <button className="flex items-center gap-3 text-[16px] font-semibold leading-none tracking-[-0.04em] md:hidden" type="button">
+          Menu
+          <span className="flex h-4 w-5 flex-col justify-center gap-[5px]">
+            <span className="h-px w-full bg-black" />
+            <span className="h-px w-full bg-black" />
+          </span>
+        </button>
       </Container>
     </header>
   );
@@ -137,20 +151,19 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="min-h-[860px] pt-[92px] sm:min-h-[980px] lg:min-h-[1130px]">
+    <section id="top" className="min-h-[860px] pt-[150px] max-md:min-h-[844px] max-md:pt-[126px] lg:min-h-[860px]">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,620px)_1fr]">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,825px)_1fr]">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-            <h1 className="max-w-[620px] text-[clamp(38px,5.5vw,62px)] font-semibold leading-[0.98] tracking-[-0.07em]">
+            <h1 className="max-w-[825px] text-[clamp(43px,5.15vw,74px)] font-semibold leading-[1.08] tracking-[-0.075em]">
               We are an independent brand and digital company crafting bold identities and experiences
               that drive real business growth
             </h1>
-            <p className="mt-12 max-w-[280px] text-[12px] leading-[1.25] tracking-[-0.035em] text-black/80">
-              From brand strategy to digital experiences, we create strong, meaningful, and measurable
-              identities your story can be remembered by.
+            <p className="mt-[90px] max-w-[350px] text-[20px] font-medium leading-[1.22] tracking-[-0.055em] text-black/80 max-md:hidden">
+              From brand identity to digital experiences and growth strategy, we design, build, and scale everything your brand needs to stand out and perform under one roof.
             </p>
-            <div className="mt-5 flex items-center gap-2">
-              <Pill>Contact us</Pill>
+            <div className="mt-5 flex items-center gap-2 max-md:hidden">
+              <Pill href="/contact">Start a project</Pill>
               <Pill href="#works" variant="light">
                 Our Work
               </Pill>
@@ -160,23 +173,24 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.12 }}
-            className="self-start justify-self-start pt-8 lg:justify-self-end lg:pt-[278px]"
+            className="self-start justify-self-start pt-8 max-md:w-full lg:justify-self-end lg:pt-[420px]"
           >
-            <div className="w-[245px]">
-              <div className="relative h-[142px] w-full overflow-hidden bg-neutral-200">
+            <div className="w-[300px] max-md:w-full">
+              <div className="relative h-[181px] w-full overflow-hidden bg-neutral-200 max-md:h-[435px] max-[430px]:h-[310px]">
                 <Image
-                  src="/images/current-site/NTLzKZsMLs4oDne9oxD7kotS2w8.jpg"
+                  src="/images/current-site/kfC4SyMtgSdc4B3CsWx102i4nrA.jpg"
                   alt="Humaneframes project preview"
                   fill
                   priority
-                  sizes="245px"
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 300px"
                   className="object-cover"
                 />
               </div>
-              <p className="mt-2 text-[10px] font-medium leading-[1.05] tracking-[-0.03em]">
-                Humaneframes revealed
+              <p className="mt-2 text-[18px] font-medium leading-[1.16] tracking-[-0.055em] text-black/75 max-md:text-[16px]">
+                Humaneframes showreel
                 <br />
-                Matha - 2026
+                (Clients - 2025/2026)
               </p>
             </div>
           </motion.div>

@@ -77,7 +77,7 @@ function AnimatedHeading({
     <Reveal>
       <h2
         className={cn(
-          "font-display text-[clamp(2.7rem,8vw,8.8rem)] font-black uppercase leading-[0.88] text-[#050505]",
+          "font-display text-[clamp(2.7rem,8vw,8.8rem)] font-black uppercase leading-[0.98] text-[#050505]",
           className,
         )}
       >
@@ -190,7 +190,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.35, delay: index * 0.04 }}
-                  className="border-b border-white/10 py-4 font-display text-4xl uppercase leading-none"
+                  className="border-b border-white/10 py-4 font-display text-4xl uppercase leading-[1.08]"
                 >
                   {link.label}
                 </motion.a>
@@ -238,7 +238,7 @@ function Hero() {
       <div className="absolute inset-x-0 top-28 font-display text-[23vw] uppercase leading-none text-white/[0.035]">
         Frames
       </div>
-      <Container className="relative grid min-h-[calc(100vh-6rem)] items-end gap-8 pb-10 lg:grid-cols-[1.02fr_0.98fr] lg:pb-10">
+      <Container className="relative grid min-h-[calc(100vh-6rem)] items-end gap-8 pb-10 lg:grid-cols-[1.12fr_0.88fr] lg:pb-10">
         <motion.div
           initial={reduceMotion ? false : "hidden"}
           animate="show"
@@ -258,7 +258,7 @@ function Hero() {
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.9, ease }}
-            className="font-display text-[clamp(3.8rem,9.2vw,11.8rem)] uppercase leading-[0.8] tracking-normal"
+            className="font-display text-[clamp(3.25rem,5.2vw,6.9rem)] uppercase leading-[1] tracking-normal"
           >
             Your business is better than your brand. We fix that.
           </motion.h1>
@@ -331,7 +331,7 @@ function StudioIntro() {
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <Reveal>
             <SectionLabel>/ Studio</SectionLabel>
-            <h2 className="font-display text-[clamp(3.2rem,8.5vw,9rem)] uppercase leading-[0.86] text-[#050505]">
+            <h2 className="font-display text-[clamp(3rem,7.6vw,8rem)] uppercase leading-[0.98] text-[#050505]">
               We build the digital layer your business is judged by.
             </h2>
           </Reveal>
@@ -381,7 +381,7 @@ function Capabilities() {
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display text-[clamp(2.2rem,4vw,4.4rem)] uppercase leading-[0.86] text-[#050505]">
+                  <h3 className="font-display text-[clamp(2.1rem,3.7vw,4rem)] uppercase leading-[0.98] text-[#050505]">
                     {service.title}
                   </h3>
                   <p className="mt-5 text-sm leading-6 text-[#151515]/68">{service.description}</p>
@@ -405,7 +405,7 @@ function ProofSection() {
       <Container>
         <SectionLabel>/ Proof</SectionLabel>
         <Reveal>
-          <h2 className="font-display text-[clamp(4rem,12vw,13rem)] uppercase leading-[0.78]">
+          <h2 className="font-display text-[clamp(3.7rem,10.8vw,11.8rem)] uppercase leading-[0.94]">
             Real work. Real movement.
           </h2>
         </Reveal>
@@ -470,7 +470,7 @@ function WorkSection() {
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-55">
                       {String(index + 1).padStart(2, "0")} / Selected work
                     </p>
-                    <h3 className="mt-6 font-display text-[clamp(3.2rem,8vw,9.5rem)] uppercase leading-[0.8]">
+                    <h3 className="mt-6 font-display text-[clamp(2.9rem,7vw,8.2rem)] uppercase leading-[0.94]">
                       {project.name}
                     </h3>
                     <p className="mt-6 max-w-2xl text-base leading-7 opacity-68">{project.context}</p>
@@ -531,7 +531,7 @@ function ClientFitSection() {
           <div>
             <SectionLabel>/ Clients</SectionLabel>
             <Reveal>
-              <h2 className="font-display text-[clamp(3.6rem,9vw,10.5rem)] uppercase leading-[0.82]">
+              <h2 className="font-display text-[clamp(3.2rem,8vw,9rem)] uppercase leading-[0.96]">
                 For businesses that are already good, but don&apos;t look like it yet.
               </h2>
             </Reveal>
@@ -573,7 +573,7 @@ function EngagementSection() {
               >
                 <div>
                   <p className="font-display text-5xl text-[#B8652E]">{String(index + 1).padStart(2, "0")}</p>
-                  <h3 className="mt-8 font-display text-[clamp(2.5rem,4.5vw,5rem)] uppercase leading-[0.86]">
+                  <h3 className="mt-8 font-display text-[clamp(2.25rem,4vw,4.4rem)] uppercase leading-[0.98]">
                     {engagement.title}
                   </h3>
                   <p className="mt-5 text-sm leading-6 text-[#151515]/66">{engagement.bestFor}</p>
@@ -627,7 +627,7 @@ function FinalCTA() {
     <section id="contact" className="bg-[#050505] py-24 text-[#FAF8F3] sm:py-32">
       <Container>
         <Reveal>
-          <h2 className="max-w-7xl font-display text-[clamp(4rem,12.5vw,15rem)] uppercase leading-[0.78]">
+          <h2 className="max-w-7xl font-display text-[clamp(3.5rem,10.4vw,12rem)] uppercase leading-[0.94]">
             If your business is serious, your digital presence should stop looking accidental.
           </h2>
         </Reveal>

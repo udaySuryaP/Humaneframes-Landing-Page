@@ -106,7 +106,12 @@ function SectionKicker({ children }: { children: React.ReactNode }) {
 }
 
 function Nav() {
-  const links = ["Home", "About", "Services", "Works"];
+  const links = [
+    { label: "Home", href: "#top" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "#services" },
+    { label: "Works", href: "#works" },
+  ];
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#f3f3f1]/90 backdrop-blur-sm">
@@ -116,8 +121,8 @@ function Nav() {
         </a>
         <nav className="hidden items-center gap-5 text-[10px] font-medium leading-none md:flex">
           {links.map((link, index) => (
-            <a key={link} href={index === 0 ? "#top" : `#${link.toLowerCase()}`} className="relative hover:opacity-60">
-              {link}
+            <a key={link.label} href={link.href} className="relative hover:opacity-60">
+              {link.label}
               {index === 0 && (
                 <span className="absolute -right-2 top-1/2 h-1 w-1 -translate-y-1/2 rounded-full bg-[#cf221b]" />
               )}

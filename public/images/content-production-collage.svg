@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-label="Content production collage placeholder">
+  <rect width="1600" height="1100" fill="#050505"/>
+  <rect x="102" y="102" width="438" height="656" fill="#f4f1ea"/>
+  <rect x="584" y="102" width="430" height="430" fill="#b8652e"/>
+  <rect x="1058" y="102" width="440" height="656" fill="#151515"/>
+  <rect x="584" y="574" width="430" height="424" fill="#faf8f3"/>
+  <rect x="102" y="802" width="438" height="196" fill="#d8341f"/>
+  <g fill="none" stroke="#050505" stroke-opacity=".24" stroke-width="18">
+    <circle cx="321" cy="430" r="122"/>
+    <circle cx="799" cy="786" r="108"/>
+  </g>
+  <text x="1104" y="692" fill="#faf8f3" font-family="Arial, sans-serif" font-size="76" font-weight="900">CONTENT</text>
+  <text x="134" y="932" fill="#050505" font-family="Arial, sans-serif" font-size="50" font-weight="900">PRODUCTION</text>
+</svg>

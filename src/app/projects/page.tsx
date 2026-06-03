@@ -1,5 +1,5 @@
-import FramerMirror from "@/components/FramerMirror";
+import ProjectsPage from "@/components/ProjectsPage";
 
 export default function Projects() {
-  return <FramerMirror route="/projects" />;
+  return <ProjectsPage />;
 }

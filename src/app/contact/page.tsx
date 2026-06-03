@@ -1,5 +1,5 @@
-import FramerMirror from "@/components/FramerMirror";
+import ContactPage from "@/components/ContactPage";
 
 export default function Contact() {
-  return <FramerMirror route="/contact" />;
+  return <ContactPage />;
 }

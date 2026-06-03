@@ -1,5 +1,5 @@
-import FramerMirror from "@/components/FramerMirror";
+import HumaneframesLanding from "@/components/HumaneframesLanding";
 
 export default function Home() {
-  return <FramerMirror route="/" />;
+  return <HumaneframesLanding />;
 }

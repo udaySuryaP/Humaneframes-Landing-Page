@@ -9,7 +9,6 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://humaneframes.com"),
   title: "Humaneframes - Brand & Digital Experience Company",
   description:
     "Humaneframes is a Kerala based brand and digital experience company helping businesses grow through strategy, design, technology, and measurable digital performance.",
@@ -17,7 +16,6 @@ export const metadata: Metadata = {
     title: "Humaneframes - Brand & Digital Experience Company",
     description:
       "Humaneframes is a Kerala based brand and digital experience company helping businesses grow through strategy, design, technology, and measurable digital performance.",
-    url: "https://humaneframes.com",
     siteName: "Humaneframes",
     type: "website",
   },

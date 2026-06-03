@@ -445,7 +445,7 @@ export const legalPages = {
     title: "Terms of Service",
     date: "Apr 9, 2026",
     sections: [
-      ["Introduction", "Welcome to Humameframes! These Terms of Service govern your use of our website www.humaneframes.com and services. By accessing or using our platform, you agree to comply with these terms and conditions."],
+      ["Introduction", "Welcome to Humameframes! These Terms of Service govern your use of this website and our services. By accessing or using our platform, you agree to comply with these terms and conditions."],
       ["User Responsibilities", "If you create an account, you are responsible for maintaining the confidentiality of your account credentials. You agree not to engage in illegal, unauthorized, or abusive activities including spamming, hacking, violating intellectual property rights, or sharing offensive, defamatory, or harmful material."],
       ["Intellectual Property", "Our platform and its content, including text, graphics, logos, and software, are protected by intellectual property laws. You may not use, reproduce, or distribute our content without permission."],
       ["Privacy", "Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your personal information."],
@@ -462,7 +462,7 @@ export const legalPages = {
     title: "Privacy Policy",
     date: "Apr 9, 2026",
     sections: [
-      ["Introduction", "Welcome to Humameframes! We are committed to protecting the privacy and security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our website www.humaneframes.com or our services."],
+      ["Introduction", "Welcome to Humameframes! We are committed to protecting the privacy and security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use this website or our services."],
       ["Information We Collect", "We may collect personal information such as your name, email address, phone number, billing information, usage data including IP address, browser type, pages visited, device information, and cookie information."],
       ["How We Use Your Information", "We use collected information to provide and improve our services, personalize your experience, communicate with you about updates and offers, analyze usage trends, and optimize our website."],
       ["Data Sharing and Disclosure", "We may share information with your consent, to comply with legal obligations or legal requests, to protect rights, property, or safety, or in connection with a merger, acquisition, or sale of assets."],

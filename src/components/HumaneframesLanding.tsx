@@ -42,7 +42,7 @@ const stats = [
   { value: "8+", label: "Businesses Transformed" },
   { value: "1M+", label: "Views Generated" },
   { value: "180%", label: "Avg. Engagement Growth" },
-  { value: "40%", label: "Conversion Uplift Today" },
+  { value: "40%", label: "Growth in Monthly Leads" },
 ];
 
 const works = [
@@ -53,7 +53,7 @@ const works = [
   },
   {
     year: "2026",
-    title: "Destrezza Transforming a Premium Brand Into a Premium Experience",
+    title: "Destrezzza Transforming a Premium Brand Into a Premium Experience",
     image: "/images/current-site/kfC4SyMtgSdc4B3CsWx102i4nrA.jpg",
   },
   {
@@ -63,14 +63,14 @@ const works = [
   },
   {
     year: "2026",
-    title: "Zoro to Fully Bookable in One of Kerala's Most Competitive Travel Markets",
+    title: "Zero to Fully Bookable in One of Kerala's Most Competitive Travel Markets",
     image: "/images/current-site/A9aPeT9DeN0TtIN1lKVMP9wVzU8.jpg",
   },
 ];
 
 const footerLinks = {
   Pages: ["Home", "Services", "Projects", "About", "Contact"],
-  Contact: ["hello.humaneframes@gmail.com", "+91 6238 3456", "Pathanamthitta"],
+  Contact: ["hello.humaneframes@gmail.com", "+91 90745 55835", "+91 81380 08357"],
   Socials: ["LinkedIn", "Instagram", "Facebook"],
 };
 

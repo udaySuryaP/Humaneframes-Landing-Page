@@ -16,7 +16,7 @@ export default function ContactPage() {
           <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
               <h1 className="text-[clamp(48px,5.6vw,72px)] font-semibold leading-none tracking-[-0.075em]">
-                Contact
+                Get in touch
               </h1>
               <p className="mt-14 max-w-[150px] text-[13px] leading-[1.18] tracking-[-0.035em] text-black/75">
                 Let&apos;s build something meaningful.

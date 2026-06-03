@@ -98,7 +98,7 @@ function FooterList({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-export function CheckList({ items }: { items: string[] }) {
+export function CheckList({ items }: { items: readonly string[] }) {
   return (
     <ul className="space-y-3 text-[12px] leading-none tracking-[-0.035em]">
       {items.map((item) => (

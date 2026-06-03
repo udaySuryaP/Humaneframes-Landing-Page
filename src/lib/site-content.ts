@@ -186,6 +186,258 @@ export const projects = [
     summary: "A travel-market growth build shaped around trust, discoverability, and booking-ready digital presence.",
     scope: ["Digital Marketing", "Booking Flow", "Social Content", "Travel Positioning"],
   },
+  {
+    slug: "reach-growth-for-a-school-that-deserved-to-be-seen",
+    year: "2025",
+    title: "Reach Growth for a School That Deserved to Be Seen",
+    image: "/images/current-site/SH8ModbYl6pzaEbucTDvyZJQI6E.jpg",
+    gallery: [
+      "/images/current-site/SH8ModbYl6pzaEbucTDvyZJQI6E.jpg",
+      "/images/current-site/MJxVgOgrqsqqwqQxeXRjsavLo.jpg",
+      "/images/current-site/v1MIvzoL82uE4sub4kAWiX4Zdo.jpg",
+      "/images/current-site/FCxQIxaFOPamKrg359Cs5MsOJo.jpg",
+    ],
+    summary: "A school social-media rebuild that turned a respected institution into a visible, consistent digital brand.",
+    scope: ["Social Media Marketing", "Content and Storytelling", "Education", "Reach Growth"],
+  },
+];
+
+export const projectDetails = {
+  "imism-from-idea-to-full-brand-launch": {
+    intro:
+      "Imism is a Kerala based women's fashion brand built around personalised dressing and self expression. The brand was founded with a clear vision to give women clothing that feels made for them. When they came to Humaneframes, that vision existed only in the founder's mind. Nothing else was in place.",
+    industry: "Fashion and Personalisation",
+    result:
+      "Imism went from zero, no website, no social presence, no brand identity, to a fully operational fashion brand with a live ecommerce store, a consistent brand identity across every touchpoint, and a growing social media presence driving real traffic and conversions.",
+    overview: [
+      "The brief was as open as it gets. The founder had a dream and a direction. Our job was to turn that into a real, functioning brand that could compete in the fashion market from day one.",
+    ],
+    process: [
+      "We started with brand identity, building the visual language, tone of voice, and design system that would define Imism across every platform.",
+      "From there we moved into the ecommerce website, building a full store with a custom admin panel so the team could manage products, orders, and inventory without any technical dependency.",
+      "Alongside the website we built out the social media presence from scratch with strategy, content calendar, visual templates, and a production system for reels and video content.",
+      "SEO and AI visibility were built into the website from the start, not added later, ensuring Imism could be discovered organically from launch day.",
+    ],
+    outcomes: [
+      "Launched a complete ecommerce brand from zero with no prior digital presence.",
+      "Built and activated social media channels that began generating reach and engagement from the first month.",
+      "Content reached audiences across Kerala and beyond from launch.",
+      "Ecommerce store live and operational with full admin ownership handed to the client.",
+      "Long term growth support ongoing with continuous content creation, social management, and performance tracking.",
+    ],
+  },
+  "destrezzza-transforming-a-premium-brand-into-a-premium-experience": {
+    intro:
+      "Destrezzza is a Kerala based premium luxury furniture company supplying architects, designers, and construction professionals with high end furniture products. The brand carries a genuinely premium offering but nothing about their digital presence reflected that.",
+    industry: "Furniture and Interior Design",
+    result:
+      "Destrezzza went from a generic, low quality website that undermined their premium positioning to a clean, high performance digital presence that reflects the quality of what they sell.",
+    overview: [
+      "Destrezzza came to us with a problem that is more common than most premium brands admit: their product was world class but their website looked like it belonged to a budget supplier.",
+    ],
+    process: [
+      "We rebuilt the website from the ground up so the site felt as premium as the furniture it was showcasing.",
+      "We delivered a clean, minimal, high performance website with a custom admin panel giving the team full control over products and content.",
+      "SEO was built into the architecture from the start, then Meta and Google Ads were activated to reach architects, designers, and construction professionals.",
+      "Social media was restructured to reflect a consistent, premium brand voice across every platform.",
+    ],
+    outcomes: [
+      "Replaced a generic website with a premium, performance optimized digital presence.",
+      "Custom admin panel delivered giving the team full content and product ownership.",
+      "SEO implemented from the ground up resulting in improved search visibility.",
+      "Meta and Google Ads activated driving targeted visibility among architects, designers, and construction professionals.",
+      "Social media presence restructured to reflect a consistent and premium brand identity.",
+      "Long term website support and maintenance ongoing.",
+    ],
+  },
+  "turning-an-event-company-into-a-visible-regional-brand": {
+    intro:
+      "Pioneer Caters is an event management company based in Alappuzha handling hospitality and events across the region. They had an existing social media presence but it was not working hard enough for the business.",
+    industry: "Hospitality and Event Management",
+    result:
+      "Content reach grew from an average of 3,000 to 9,000 views per post to peaks of 35,000, 34,000, 30,600, 19,000, and 17,000 through consistent content strategy and custom reel production.",
+    overview: [
+      "Pioneer Caters and Events had accounts and an established business behind them. The problem was that their online presence was not converting that reputation into reach.",
+      "Content was inconsistent, visibility was low, and the brand was not showing up for the audiences that mattered most.",
+    ],
+    process: [
+      "We delivered a full social media content strategy built around their services, their events, and their audience.",
+      "Custom reels and video content were produced to showcase the Pioneer Caters experience in a way that felt premium and trustworthy.",
+      "Digital marketing was activated to boost visibility beyond their existing following and reach new audiences across the region.",
+    ],
+    outcomes: [
+      "Content reach grew from 3,000 to 9,000 average views to consistent peaks of 35,000, 34,000, and 30,600 per post.",
+      "Visibility increased dramatically across Instagram and social platforms through custom reel production and strategic content.",
+      "Digital marketing campaigns boosted reach beyond existing followers and put the brand in front of new regional audiences.",
+      "A local event company now has an online presence that reflects the scale and quality of the work they actually do.",
+    ],
+  },
+  "zero-to-fully-bookable-in-one-of-kerala-s-most-competitive-travel-markets": {
+    intro:
+      "My Alleppey Houseboat is a premium tourism experience operating in the backwaters of Alleppey, one of Kerala's most competitive and saturated travel markets. The experience itself was exceptional. The digital presence was nonexistent.",
+    industry: "Tourism and Hospitality",
+    result:
+      "98,000+ total account reach generated across Instagram and social platforms since launch, with a fully live booking website discoverable on search from day one.",
+    overview: [
+      "In a travel market where customers discover, evaluate, and decide entirely online before ever making contact, they were invisible: no website, no social media, and no way for travelers to find, trust, or book.",
+    ],
+    process: [
+      "We built their entire digital presence from absolute zero. Website, social media, video content, and SEO all launched together.",
+      "We delivered a full booking website designed and built specifically for travel audiences: showcase first, book second.",
+      "Reels and video content were produced to showcase the houseboat experience, while ongoing social media management kept the brand active and visible all year round.",
+    ],
+    outcomes: [
+      "98,000+ total account reach generated across Instagram and social platforms since launch.",
+      "Went from zero online presence to a fully live booking website discoverable on search from day one.",
+      "Complete houseboat experience showcased end to end through reels, videos, and photography.",
+      "A tourism business with no digital presence is now discoverable, bookable, and active across every channel.",
+    ],
+  },
+  "reach-growth-for-a-school-that-deserved-to-be-seen": {
+    intro:
+      "Matha Senior Secondary School is a respected educational institution in Kerala with a strong reputation built over years of quality education. But their social media presence told a completely different story: inconsistent, unbranded, and reaching almost nobody.",
+    industry: "Education",
+    result:
+      "525% increase in content reach recorded within the first content cycle. Average views per post grew from 8,000 to 54,000, with every school event and community moment captured without a gap in coverage.",
+    overview: [
+      "Matha School came to us with three clear gaps: no content strategy or posting consistency, no visual identity or brand language on social media, and minimal reach with no growth trajectory.",
+      "For an institution of their reputation, this was a credibility problem. Parents and students were forming opinions from a social presence that did not reflect the school's actual quality.",
+    ],
+    process: [
+      "We rebuilt their entire social media presence from the ground up, not just better looking posts but a full content strategy built around the school's values, calendar, and audience.",
+      "We delivered a social media content strategy aligned with the school's identity and annual calendar, polished reels and video assets, designed post templates, and ongoing social media handling.",
+      "Every piece of content was built with reach and engagement as the primary goal, not just aesthetics.",
+    ],
+    outcomes: [
+      "525% increase in content reach recorded across Instagram reels and posts within the first content cycle.",
+      "Average views per post grew from 8,000 to 54,000 after a full content strategy and reel production overhaul.",
+      "Every school event, admissions season, and key community moment captured and published without a single gap in coverage.",
+      "A respected institution now has a social presence that reflects its actual quality and continues to grow.",
+    ],
+  },
+} as const;
+
+export const blogPosts = [
+  {
+    slug: "the-role-of-prototyping-in-product-design",
+    title: "The Role of Prototyping in Product Design",
+    category: "Product Design",
+    date: "Jun 25, 2024",
+    image: "/images/current-site/BsWGlf5uAfXw6S5xyEsN4oGN8w.jpg",
+    excerpt:
+      "Prototyping plays a pivotal role in product design, serving as a bridge between ideas and execution by allowing designers, stakeholders, and users to explore concepts early.",
+    sections: ["Transforming Concepts into Tangible Forms", "Facilitating User Feedback and Validation", "Exploring and Refining Design Options", "Enhancing Communication and Collaboration", "Identifying and Addressing Design Flaws", "Supporting Decision-Making and Risk Mitigation", "Demonstrating Feasibility and Attracting Investment", "Streamlining the Development Process", "Facilitating User Training and Onboarding", "Conclusion"],
+  },
+  {
+    slug: "designing-for-user-experience-key-considerations",
+    title: "Designing for User Experience: Key Considerations",
+    category: "UX/UI",
+    date: "Jun 24, 2024",
+    image: "/images/current-site/jFj0phrjEPp3eFF25V9qTDwy8Bw.jpg",
+    excerpt:
+      "Designing for user experience (UX) focuses on creating products that are intuitive, efficient, and enjoyable, especially as digital landscapes grow increasingly complex.",
+    sections: ["Understanding User Needs and Goals", "Creating Intuitive Navigation", "Prioritizing Visual Hierarchy", "Ensuring Responsive Design", "Enhancing Load Speed and Performance", "Implementing Clear and Effective Feedback", "Designing for Accessibility", "Focusing on User Testing and Iteration", "Balancing Aesthetics with Functionality", "Building for Future Growth and Flexibility", "Conclusion"],
+  },
+  {
+    slug: "the-future-of-product-design-trends-to-watch-in-2024",
+    title: "The Future of Product Design: Trends to Watch in 2024",
+    category: "Product Design",
+    date: "Jun 23, 2024",
+    image: "/images/current-site/lhoHMdTticNqDZXQbLc1TIfM3M.jpg",
+    excerpt:
+      "As we move through 2024, the product design landscape continues to evolve with a strong focus on innovation, technology, and sustainability-driven trends.",
+    sections: ["Emphasis on Sustainability and Circular Economy", "Integration of Smart Technology", "Human-Centric Design", "Minimalist and Modular Design", "Advanced Materials and Manufacturing Techniques", "Focus on Health and Wellness", "Personalization and Customization", "Ethical Design and Transparency", "Seamless Omnichannel Experiences", "Collaborative and Co-Creation Approaches", "Conclusion"],
+  },
+  {
+    slug: "10-essential-web-design-principles-for-2024",
+    title: "10 Essential Web Design Principles for 2024",
+    category: "Web Design",
+    date: "Jun 22, 2024",
+    image: "/images/current-site/se6L5EeDqcgbbFHN21I1r0Zwxg.jpg",
+    excerpt:
+      "As web design evolves in 2024, embracing modern principles like usability, clarity, and performance is essential to creating effective digital experiences.",
+    sections: ["Prioritize User Experience (UX)", "Adopt a Mobile-First Design Approach", "Embrace Minimalist Design", "Leverage Advanced Typography", "Integrate Interactive and Engaging Elements", "Ensure Strong Security Measures", "Optimize for Search Engines (SEO)", "Leverage Data-Driven Design", "Promote Inclusivity and Diversity", "Conclusion"],
+  },
+  {
+    slug: "responsive-web-design-best-practices-and-tips",
+    title: "Responsive Web Design: Best Practices and Tips",
+    category: "Web Design",
+    date: "Jun 21, 2024",
+    image: "/images/current-site/SxNCeGH4UbeogTFWMRrTNpzNxrs.jpg",
+    excerpt:
+      "Responsive web design is essential in today's digital landscape, ensuring websites function seamlessly across a wide range of devices and screen sizes.",
+    sections: ["What is Responsive Web Design?", "Best Practices for Responsive Web Design", "Tips for Implementing Responsive Web Design", "Conclusion"],
+  },
+  {
+    slug: "creating-high-converting-landing-pages",
+    title: "Creating High-Converting Landing Pages",
+    category: "Web Design",
+    date: "Jun 20, 2024",
+    image: "/images/current-site/WUuuOOdzWxD2CXhkutFQCcKVc.jpg",
+    excerpt:
+      "A well-designed landing page plays a critical role in converting visitors by guiding them toward specific actions such as sign-ups or purchases.",
+    sections: ["Define Your Goal", "Craft a Compelling Headline", "Write Persuasive Copy", "Design an Eye-Catching Layout", "Optimize the Call-to-Action", "Incorporate Trust Signals", "A/B Test and Optimize", "Ensure Fast Load Times", "Monitor and Iterate", "Conclusion"],
+  },
+  {
+    slug: "how-to-create-user-centric-products-a-step-by-step-guide",
+    title: "How to Create User-Centric Products: A Step-by-Step Guide",
+    category: "Product Design",
+    date: "Jun 19, 2024",
+    image: "/images/current-site/FCxQIxaFOPamKrg359Cs5MsOJo.jpg",
+    excerpt:
+      "Creating user-centric products means prioritizing user needs, preferences, and behaviors to deliver meaningful and engaging experiences.",
+    sections: ["Step 1: Conduct User Research", "Step 2: Develop User Personas", "Step 3: Map User Journeys", "Step 4: Ideate and Prototype", "Step 5: Implement and Refine", "Step 6: Launch and Monitor", "Best Practices for User-Centric Design", "Conclusion"],
+  },
+  {
+    slug: "conducting-effective-user-research-for-better-ui-design",
+    title: "Conducting Effective User Research for Better UI Design",
+    category: "UX/UI",
+    date: "Jun 18, 2024",
+    image: "/images/current-site/MJxVgOgrqsqqwqQxeXRjsavLo.jpg",
+    excerpt:
+      "User research is a cornerstone of effective UI design, providing insights that ensure interfaces are both visually appealing and highly usable.",
+    sections: ["Why User Research is Essential", "Key Methods for User Research", "Integrating User Research into UI Design", "Conclusion"],
+  },
+  {
+    slug: "sustainable-product-design-practices-and-benefits",
+    title: "Sustainable Product Design: Practices and Benefits",
+    category: "Product Design",
+    date: "Jun 17, 2024",
+    image: "/images/current-site/SH8ModbYl6pzaEbucTDvyZJQI6E.jpg",
+    excerpt:
+      "Sustainable design focuses on reducing environmental impact by considering materials, processes, and long-term usability in product creation.",
+    sections: ["What is Sustainable Product Design?", "Key Practices in Sustainable Product Design", "Benefits of Sustainable Product Design", "Conclusion"],
+  },
+  {
+    slug: "ui-design-trends-to-elevate-your-digital-products",
+    title: "UI Design Trends to Elevate Your Digital Products",
+    category: "UX/UI",
+    date: "Jun 16, 2024",
+    image: "/images/current-site/v1MIvzoL82uE4sub4kAWiX4Zdo.jpg",
+    excerpt:
+      "Staying ahead in digital design requires keeping up with evolving UI trends as technology advances and user expectations continue to shift.",
+    sections: ["Minimalist Design with Bold Typography", "Neumorphism and Soft UI", "Microinteractions", "Dark Mode", "Asymmetrical Layouts", "Custom Illustrations and Animations", "Voice User Interface", "Augmented Reality Integration", "Personalization and Customization", "Conclusion"],
+  },
+  {
+    slug: "the-impact-of-microinteractions-on-ux",
+    title: "The Impact of Microinteractions on UX",
+    category: "UX/UI",
+    date: "Jun 10, 2024",
+    image: "/images/current-site/c91AT7DwCcDm81FpYxvWawqiQIY.png",
+    excerpt:
+      "Microinteractions enhance user engagement by providing subtle feedback and moments of delight that improve overall usability.",
+    sections: ["What Are Microinteractions?", "The Importance of Microinteractions in UX", "Key Elements of Effective Microinteractions", "Implementing Microinteractions", "Conclusion"],
+  },
+  {
+    slug: "the-importance-of-ux-in-modern-web-design",
+    title: "The Importance of UX in Modern Web Design",
+    category: "Web Design",
+    date: "Jun 3, 2024",
+    image: "/images/current-site/BsWGlf5uAfXw6S5xyEsN4oGN8w.jpg",
+    excerpt:
+      "User experience design plays a vital role in shaping a strong digital presence as the internet becomes increasingly integrated into daily life.",
+    sections: ["What is UX?", "The Evolution of UX in Web Design", "Why UX Matters", "Key Elements of Effective UX Design", "Implementing UX in Web Design", "Conclusion"],
+  },
 ];
 
 export const legalPages = {
@@ -194,10 +446,15 @@ export const legalPages = {
     date: "Apr 9, 2026",
     sections: [
       ["Introduction", "Welcome to Humameframes! These Terms of Service govern your use of our website www.humaneframes.com and services. By accessing or using our platform, you agree to comply with these terms and conditions."],
-      ["User Responsibilities", "You agree not to engage in any illegal, unauthorized, or abusive activities on our platform. Content must not infringe upon the rights of others or contain offensive, defamatory, or harmful material."],
+      ["User Responsibilities", "If you create an account, you are responsible for maintaining the confidentiality of your account credentials. You agree not to engage in illegal, unauthorized, or abusive activities including spamming, hacking, violating intellectual property rights, or sharing offensive, defamatory, or harmful material."],
       ["Intellectual Property", "Our platform and its content, including text, graphics, logos, and software, are protected by intellectual property laws. You may not use, reproduce, or distribute our content without permission."],
       ["Privacy", "Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your personal information."],
-      ["Payment and Billing", "If our services require payment, you agree to pay all applicable fees and charges. Payments are processed securely."],
+      ["Payment and Billing", "If our services require payment, you agree to pay all applicable fees and charges. Payments are processed securely, and we do not store your payment information."],
+      ["Disclaimer of Warranties", "Our platform is provided as is without warranties of any kind, express or implied. We do not guarantee the accuracy, reliability, or suitability of our services for your specific needs."],
+      ["Limitation of Liability", "In no event shall Humaneframes be liable for damages arising from your use of our platform, including direct, indirect, incidental, or consequential damages."],
+      ["Indemnification", "You agree to indemnify and hold harmless Humaneframes, its affiliates, and employees from claims, damages, or liabilities arising from your use of our platform or violation of these terms."],
+      ["Governing Law", "These Terms of Service shall be governed by and construed in accordance with the laws of India. Any dispute shall be resolved through arbitration in Kerala, India, in accordance with the Arbitration and Conciliation Act, 1996."],
+      ["Changes to Terms", "We reserve the right to update or modify these terms at any time. We will notify you of any changes by posting the revised terms on our platform."],
       ["Contact Us", "If you have any questions or concerns about our Terms of Service, please contact us at hello.humaneframes@gmail.com."],
     ],
   },
@@ -205,11 +462,14 @@ export const legalPages = {
     title: "Privacy Policy",
     date: "Apr 9, 2026",
     sections: [
-      ["Introduction", "Welcome to Humameframes! We are committed to protecting the privacy and security of your personal information."],
-      ["Information We Collect", "We may collect personal information such as your name, email address, phone number, billing information, usage data, and cookie information."],
-      ["How We Use Your Information", "We use collected information to provide and improve our services, personalize your experience, communicate with you, and optimize our website."],
-      ["Data Sharing and Disclosure", "We may share information with your consent, to comply with legal obligations, to protect our rights, or in connection with a merger, acquisition, or sale of assets."],
-      ["Data Security", "We implement security measures to protect your personal information, but no method of transmission over the internet is completely secure."],
+      ["Introduction", "Welcome to Humameframes! We are committed to protecting the privacy and security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our website www.humaneframes.com or our services."],
+      ["Information We Collect", "We may collect personal information such as your name, email address, phone number, billing information, usage data including IP address, browser type, pages visited, device information, and cookie information."],
+      ["How We Use Your Information", "We use collected information to provide and improve our services, personalize your experience, communicate with you about updates and offers, analyze usage trends, and optimize our website."],
+      ["Data Sharing and Disclosure", "We may share information with your consent, to comply with legal obligations or legal requests, to protect rights, property, or safety, or in connection with a merger, acquisition, or sale of assets."],
+      ["Data Security", "We implement security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. No method of transmission over the internet or electronic storage is completely secure."],
+      ["Your Rights and Choices", "You have the right to access and update your personal information, opt out of promotional communications, and request deletion of your account and data."],
+      ["Children's Privacy", "Our services are not intended for children under the age of 13. We do not knowingly collect or solicit personal information from minors."],
+      ["Changes to This Policy", "We may update this Privacy Policy periodically. We will notify you of any changes by posting the new policy on this page."],
       ["Contact Us", "If you have any questions or concerns about our Privacy Policy, please contact us at hello.humaneframes@gmail.com."],
     ],
   },

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/lib/site-content";
-import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
+import { projectDetails, projects } from "@/lib/site-content";
+import { CheckList, Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 export default function ProjectDetailPage({ slug }: { slug: string }) {
   const project = projects.find((item) => item.slug === slug) ?? projects[0];
-  const more = projects.filter((item) => item.slug !== project.slug).slice(0, 2);
+  const detail = projectDetails[project.slug as keyof typeof projectDetails];
+  const more = projects.filter((item) => item.slug !== project.slug).slice(0, 4);
 
   return (
     <main className="min-h-screen bg-[#f3f3f1] text-black">
@@ -21,7 +22,7 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
             </div>
             <div className="max-w-[620px] self-end">
               <p className="text-[22px] font-semibold leading-[1.07] tracking-[-0.06em] text-black/82">
-                {project.summary}
+                {detail?.intro ?? project.summary}
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
                 {project.scope.map((item) => (
@@ -50,17 +51,50 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
         </Container>
       </section>
 
+      {detail && (
+        <section className="pt-24">
+          <Container>
+            <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+              <aside className="grid gap-px bg-black/5">
+                <div className="bg-white p-8">
+                  <p className="mb-5 text-[12px] leading-none text-black/55">Industry</p>
+                  <p className="text-[24px] font-semibold leading-[1.02] tracking-[-0.06em]">
+                    {detail.industry}
+                  </p>
+                </div>
+                <div className="bg-black p-8 text-white">
+                  <p className="mb-5 text-[12px] leading-none text-white/55">Result</p>
+                  <p className="text-[24px] font-semibold leading-[1.04] tracking-[-0.06em]">
+                    {detail.result}
+                  </p>
+                </div>
+              </aside>
+              <div className="grid gap-px bg-black/5">
+                <ProjectSection title="Overview" paragraphs={detail.overview} />
+                <ProjectSection title="Process" paragraphs={detail.process} />
+                <div className="bg-white p-8">
+                  <h2 className="mb-10 text-[38px] font-semibold leading-none tracking-[-0.065em]">
+                    Result
+                  </h2>
+                  <CheckList items={detail.outcomes} />
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
       <section className="pt-28">
         <Container>
           <div className="mb-8 flex items-end justify-between">
             <h2 className="text-[42px] font-semibold leading-none tracking-[-0.065em]">More Projects</h2>
             <Pill href="/projects">See all projects</Pill>
           </div>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {more.map((item) => (
               <Link key={item.slug} href={`/projects/${item.slug}`} className="bg-white">
                 <div className="relative h-[360px] overflow-hidden bg-neutral-200">
-                  <Image src={item.image} alt={item.title} fill sizes="50vw" className="object-cover" />
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 1024px) 50vw, 330px" className="object-cover" />
                 </div>
                 <div className="p-4">
                   <p className="mb-2 text-[10px] leading-none text-black/55">{item.year}</p>
@@ -73,5 +107,18 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
       </section>
       <SiteFooter largeGap={false} />
     </main>
+  );
+}
+
+function ProjectSection({ title, paragraphs }: { title: string; paragraphs: readonly string[] }) {
+  return (
+    <section className="bg-white p-8">
+      <h2 className="mb-10 text-[38px] font-semibold leading-none tracking-[-0.065em]">{title}</h2>
+      <div className="space-y-5 text-[17px] font-medium leading-[1.2] tracking-[-0.045em] text-black/76">
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    </section>
   );
 }

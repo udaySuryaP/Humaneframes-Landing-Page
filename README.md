@@ -1,12 +1,14 @@
-# Humaneframes Live Mirror
+# Humaneframes Landing Page
 
-Next.js wrapper that mirrors the live Humaneframes Framer website route-for-route.
+Premium editorial landing page for Humaneframes, an independent brand and digital studio.
 
 ## Stack
 
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
+- Framer Motion
+- next/image with local placeholder art slots
 
 ## Local Development
 

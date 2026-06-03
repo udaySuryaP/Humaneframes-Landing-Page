@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-label="Dark cinematic object placeholder">
+  <rect width="1600" height="1200" fill="#050505"/>
+  <rect x="160" y="118" width="1280" height="964" fill="#101010"/>
+  <path d="M308 972C430 636 576 354 804 242c206 122 333 400 480 730H308Z" fill="#1f1f1f"/>
+  <path d="M722 178h168v812H722z" fill="#f4f1ea" opacity=".08"/>
+  <circle cx="806" cy="498" r="232" fill="#b8652e" opacity=".28"/>
+  <rect x="274" y="902" width="1052" height="34" fill="#d8341f"/>
+  <g fill="none" stroke="#faf8f3" stroke-opacity=".16">
+    <path d="M190 178h1220M190 1022h1220M296 118v964M1304 118v964"/>
+  </g>
+  <text x="272" y="260" fill="#faf8f3" fill-opacity=".45" font-family="Arial, sans-serif" font-size="28" letter-spacing="14">CINEMATIC STUDIO OBJECT</text>
+</svg>

@@ -1,687 +1,414 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import {
-  clientFits,
-  engagements,
-  metrics,
-  navLinks,
-  processSteps,
-  projects,
-  services,
-} from "@/lib/site-data";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const services = [
+  {
+    number: "01",
+    title: "Brand Design",
+    overview:
+      "We make strategy visible through identity systems that give your business a clear look, feel, and voice across every touchpoint.",
+    capabilities: ["Brand identity", "Logo systems", "Brand strategy", "Creative direction", "Visual guidelines"],
+  },
+  {
+    number: "02",
+    title: "UI/UX Design",
+    overview: "Digital interfaces shaped around clarity, hierarchy, and an experience people can move through without friction.",
+    capabilities: ["Website UX", "Interface systems", "Wireframes", "Design prototypes"],
+  },
+  {
+    number: "03",
+    title: "Web and App Development",
+    overview: "Fast, responsive builds that turn the approved design into a working digital product ready for real users.",
+    capabilities: ["Landing pages", "Websites", "Web apps", "Launch support"],
+  },
+  {
+    number: "04",
+    title: "Content and Storytelling",
+    overview: "Content systems, campaigns, scripts, and visuals that help your brand show up with consistency and intent.",
+    capabilities: ["Reels", "Campaign content", "Copywriting", "Social systems"],
+  },
+  {
+    number: "05",
+    title: "Ads and Growth",
+    overview: "Campaign assets, performance testing, and growth direction built around measurable business movement.",
+    capabilities: ["Paid ads", "Campaign strategy", "Lead journeys", "Reporting"],
+  },
+];
 
-function cn(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
+const stats = [
+  { value: "8+", label: "Businesses Transformed" },
+  { value: "1M+", label: "Views Generated" },
+  { value: "180%", label: "Avg. Engagement Growth" },
+  { value: "40%", label: "Conversion Uplift Today" },
+];
+
+const works = [
+  {
+    year: "2026",
+    title: "Imism from Idea to Full Brand Launch",
+    image: "/images/current-site/5dPICNVskiIoFCUXZ8nPQsij8.png",
+  },
+  {
+    year: "2026",
+    title: "Destrezza Transforming a Premium Brand Into a Premium Experience",
+    image: "/images/current-site/kfC4SyMtgSdc4B3CsWx102i4nrA.jpg",
+  },
+  {
+    year: "2026",
+    title: "Turning an Event Company Into a Visible Regional Brand",
+    image: "/images/current-site/NTLzKZsMLs4oDne9oxD7kotS2w8.jpg",
+  },
+  {
+    year: "2026",
+    title: "Zoro to Fully Bookable in One of Kerala's Most Competitive Travel Markets",
+    image: "/images/current-site/A9aPeT9DeN0TtIN1lKVMP9wVzU8.jpg",
+  },
+];
+
+const footerLinks = {
+  Pages: ["Home", "Services", "Projects", "About", "Contact"],
+  Contact: ["hello.humaneframes@gmail.com", "+91 6238 3456", "Pathanamthitta"],
+  Socials: ["LinkedIn", "Instagram", "Facebook"],
+};
+
+function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <div className={`mx-auto w-full max-w-[1180px] px-5 sm:px-7 lg:px-8 ${className}`}>{children}</div>;
 }
 
-function Container({
+function Pill({
   children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={cn("mx-auto w-full max-w-[1540px] px-4 sm:px-6 lg:px-10", className)}>
-      {children}
-    </div>
-  );
-}
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mb-5 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B8652E]">
-      <span className="h-px w-9 bg-[#B8652E]" />
-      {children}
-    </div>
-  );
-}
-
-function Reveal({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const reduceMotion = useReducedMotion();
-
-  return (
-    <motion.div
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 34 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.8, delay, ease }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function AnimatedHeading({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <Reveal>
-      <h2
-        className={cn(
-          "font-display text-[clamp(2.7rem,8vw,8.8rem)] font-black uppercase leading-[0.98] text-[#050505]",
-          className,
-        )}
-      >
-        {children}
-      </h2>
-    </Reveal>
-  );
-}
-
-function Button({
-  children,
-  href,
+  href = "#contact",
   variant = "dark",
-  className,
-  onClick,
 }: {
   children: React.ReactNode;
-  href: string;
-  variant?: "dark" | "light" | "outline";
-  className?: string;
-  onClick?: () => void;
+  href?: string;
+  variant?: "dark" | "light";
 }) {
   return (
-    <motion.a
+    <a
       href={href}
-      onClick={onClick}
-      className={cn(
-        "inline-flex min-h-12 items-center justify-center rounded-full px-5 text-sm font-semibold uppercase tracking-[0.1em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D8341F]",
-        variant === "dark" && "bg-[#050505] text-[#FAF8F3] hover:bg-[#B8652E]",
-        variant === "light" && "bg-[#FAF8F3] text-[#050505] hover:bg-[#D8341F] hover:text-white",
-        variant === "outline" &&
-          "border border-[#050505]/20 bg-transparent text-[#050505] hover:border-[#050505] hover:bg-[#050505] hover:text-[#FAF8F3]",
-        className,
-      )}
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.98 }}
+      className={`inline-flex h-7 items-center rounded-full px-3 text-[10px] font-semibold leading-none transition-colors ${
+        variant === "dark"
+          ? "bg-black text-white hover:bg-black/75"
+          : "border border-black/20 bg-transparent text-black hover:border-black"
+      }`}
     >
       {children}
-    </motion.a>
+    </a>
   );
+}
+
+function SectionKicker({ children }: { children: React.ReactNode }) {
+  return <p className="mb-2 text-[10px] font-medium uppercase leading-none tracking-[0.08em] text-[#cf221b]">{children}</p>;
 }
 
 function Nav() {
-  const [open, setOpen] = useState(false);
+  const links = ["Home", "About", "Services", "Works"];
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-[#FAF8F3]/10 bg-[#050505]/85 text-[#FAF8F3] backdrop-blur-xl">
-      <Container className="flex h-[4.5rem] items-center justify-between">
-        <a href="#top" className="font-display text-2xl uppercase leading-none tracking-normal">
-          Humaneframes
+    <header className="fixed inset-x-0 top-0 z-50 bg-[#f3f3f1]/90 backdrop-blur-sm">
+      <Container className="flex h-12 items-center justify-between">
+        <a href="#top" className="text-[11px] font-bold leading-none tracking-[-0.03em]">
+          Humaneframes.
         </a>
-        <nav className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] text-[#FAF8F3]/70 md:flex">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="transition-colors hover:text-[#FAF8F3]">
-              {link.label}
+        <nav className="hidden items-center gap-5 text-[10px] font-medium leading-none md:flex">
+          {links.map((link, index) => (
+            <a key={link} href={index === 0 ? "#top" : `#${link.toLowerCase()}`} className="relative hover:opacity-60">
+              {link}
+              {index === 0 && (
+                <span className="absolute -right-2 top-1/2 h-1 w-1 -translate-y-1/2 rounded-full bg-[#cf221b]" />
+              )}
             </a>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <Button href="#contact" variant="light" className="min-h-10 px-4 text-[11px]">
-            Start a Project
-          </Button>
-        </div>
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-          className="grid h-11 w-11 place-items-center rounded-full border border-white/15 md:hidden"
-        >
-          <span className="relative h-3.5 w-5">
-            <span
-              className={cn(
-                "absolute left-0 top-0 h-px w-5 bg-white transition-transform",
-                open && "translate-y-[7px] rotate-45",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute bottom-0 left-0 h-px w-5 bg-white transition-transform",
-                open && "-translate-y-[7px] -rotate-45",
-              )}
-            />
-          </span>
-        </button>
+        <Pill>Contact us</Pill>
       </Container>
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
     </header>
   );
 }
 
-function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
-  return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.45, ease }}
-          className="fixed inset-x-0 top-[4.5rem] h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 bg-[#050505] md:hidden"
-        >
-          <Container className="flex min-h-full flex-col justify-between py-6">
-            <nav className="flex flex-col gap-1">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={onClose}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.35, delay: index * 0.04 }}
-                  className="border-b border-white/10 py-4 font-display text-4xl uppercase leading-[1.08]"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-            </nav>
-            <div className="pt-8">
-              <Button href="#contact" variant="light" className="w-full" onClick={onClose}>
-                Start a Project
-              </Button>
-            </div>
-          </Container>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
-
-function ImageSlot({
-  src,
-  alt,
-  priority = false,
-  className,
-}: {
-  src: string;
-  alt: string;
-  priority?: boolean;
-  className?: string;
-}) {
-  const isAbsolute = className?.includes("absolute");
-
-  return (
-    <div className={cn(!isAbsolute && "relative", "overflow-hidden bg-[#151515]", className)}>
-      <Image src={src} alt={alt} fill priority={priority} sizes="(max-width: 768px) 100vw, 48vw" className="object-cover" />
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(5,5,5,0.06),rgba(5,5,5,0.55))]" />
-    </div>
-  );
-}
-
 function Hero() {
-  const heroTags = ["Brand", "Web", "Content", "Growth"];
-  const reduceMotion = useReducedMotion();
-
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden bg-[#050505] pt-24 text-[#FAF8F3]">
-      <div className="absolute inset-x-0 top-28 font-display text-[23vw] uppercase leading-none text-white/[0.035]">
-        Frames
-      </div>
-      <Container className="relative grid min-h-[calc(100vh-6rem)] items-end gap-8 pb-10 lg:grid-cols-[1.12fr_0.88fr] lg:pb-10">
-        <motion.div
-          initial={reduceMotion ? false : "hidden"}
-          animate="show"
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.12 } },
-          }}
-          className="max-w-5xl"
-        >
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}
-            transition={{ duration: 0.7, ease }}
-            className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#B8652E]"
-          >
-            Brand / Web / Content / Growth
-          </motion.p>
-          <motion.h1
-            variants={{ hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0 } }}
-            transition={{ duration: 0.9, ease }}
-            className="font-display text-[clamp(3.25rem,5.2vw,6.9rem)] uppercase leading-[1] tracking-normal"
-          >
-            Your business is better than your brand. We fix that.
-          </motion.h1>
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}
-            transition={{ duration: 0.8, ease }}
-            className="mt-8 max-w-2xl text-base leading-7 text-[#FAF8F3]/72 sm:text-lg"
-          >
-            Humaneframes is an independent brand and digital studio crafting identities, websites,
-            content systems, and growth assets for businesses ready to look as serious as they are.
-          </motion.p>
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}
-            transition={{ duration: 0.8, ease }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
-          >
-            <Button href="#contact" variant="light">
-              Start a Project
-            </Button>
-            <Button href="#work" variant="outline" className="border-white/20 text-[#FAF8F3] hover:bg-[#FAF8F3] hover:text-[#050505]">
-              View Our Work
-            </Button>
+    <section id="top" className="min-h-[860px] pt-[92px] sm:min-h-[980px] lg:min-h-[1130px]">
+      <Container>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,620px)_1fr]">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
+            <h1 className="max-w-[620px] text-[clamp(38px,5.5vw,62px)] font-semibold leading-[0.98] tracking-[-0.07em]">
+              We are an independent brand and digital company crafting bold identities and experiences
+              that drive real business growth
+            </h1>
+            <p className="mt-12 max-w-[280px] text-[12px] leading-[1.25] tracking-[-0.035em] text-black/80">
+              From brand strategy to digital experiences, we create strong, meaningful, and measurable
+              identities your story can be remembered by.
+            </p>
+            <div className="mt-5 flex items-center gap-2">
+              <Pill>Contact us</Pill>
+              <Pill href="#works" variant="light">
+                Our Work
+              </Pill>
+            </div>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 34, scale: 0.97 }}
-          animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease }}
-          className="relative min-h-[420px] lg:min-h-[460px] 2xl:min-h-[calc(100vh-9rem)]"
-        >
-          <ImageSlot
-            src="/images/dark-cinematic-object.svg"
-            alt="Dark cinematic Humaneframes studio placeholder"
-            priority
-            className="absolute inset-x-0 bottom-0 h-[78%] rounded-[2rem]"
-          />
           <motion.div
-            animate={reduceMotion ? undefined : { y: [0, -12, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-4 top-4 rounded-3xl border border-white/15 bg-[#FAF8F3] p-5 text-[#050505] shadow-2xl sm:left-8 sm:top-10"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.12 }}
+            className="self-start justify-self-start pt-8 lg:justify-self-end lg:pt-[278px]"
           >
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#B8652E]">Studio index</p>
-            <p className="mt-5 font-display text-6xl uppercase leading-none">08</p>
-            <p className="mt-2 max-w-36 text-xs uppercase tracking-[0.14em] text-black/60">Digital presence setup</p>
-          </motion.div>
-          <div className="absolute bottom-6 left-4 right-4 flex flex-wrap gap-2 sm:left-8 sm:right-8">
-            {heroTags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-white/18 bg-[#050505]/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] backdrop-blur"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="absolute right-4 top-24 max-w-48 rounded-full border border-white/15 bg-[#050505]/70 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 backdrop-blur sm:right-8">
-            India / UAE / UK ready
-          </div>
-        </motion.div>
-      </Container>
-    </section>
-  );
-}
-
-function StudioIntro() {
-  return (
-    <section id="studio" className="overflow-hidden bg-[#F4F1EA] py-24 sm:py-32">
-      <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
-          <Reveal>
-            <SectionLabel>/ Studio</SectionLabel>
-            <h2 className="font-display text-[clamp(3rem,7.6vw,8rem)] uppercase leading-[0.98] text-[#050505]">
-              We build the digital layer your business is judged by.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.12} className="max-w-2xl lg:ml-auto">
-            <p className="text-xl leading-8 text-[#151515]/72">
-              From brand identity and websites to social media systems, campaigns, content, and
-              automation - we help businesses move from scattered presence to clear, credible,
-              premium execution.
-            </p>
-          </Reveal>
-        </div>
-        <Reveal className="mt-16">
-          <div className="flex flex-wrap gap-3 border-y border-[#050505]/15 py-6">
-            {["We", "Create", "Digital", "Presence"].map((word, index) => (
-              <motion.div
-                key={word}
-                whileHover={{ y: -6, backgroundColor: index === 1 ? "#D8341F" : "#050505", color: "#FAF8F3" }}
-                className="rounded-full border border-[#050505]/20 px-6 py-4 font-display text-[clamp(2.2rem,6vw,6rem)] uppercase leading-none text-[#050505] transition-colors sm:px-9"
-              >
-                {word}
-              </motion.div>
-            ))}
-          </div>
-        </Reveal>
-      </Container>
-    </section>
-  );
-}
-
-function Capabilities() {
-  return (
-    <section id="capabilities" className="bg-[#FAF8F3] py-24 sm:py-32">
-      <Container>
-        <SectionLabel>/ Capabilities</SectionLabel>
-        <AnimatedHeading>Everything your business needs to look credible, move faster, and sell better.</AnimatedHeading>
-        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service, index) => (
-            <Reveal key={service.title} delay={index * 0.04}>
-              <motion.article
-                whileHover={{ y: -8 }}
-                className="group min-h-[440px] overflow-hidden rounded-[1.45rem] border border-[#050505]/10 bg-[#F4F1EA] shadow-[0_24px_80px_rgba(5,5,5,0.07)]"
-              >
-                <div className="relative h-44 overflow-hidden">
-                  <ImageSlot src={service.image} alt={`${service.title} visual placeholder`} className="h-full rounded-none" />
-                  <span className="absolute left-5 top-5 font-display text-6xl uppercase leading-none text-white">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-[clamp(2.1rem,3.7vw,4rem)] uppercase leading-[0.98] text-[#050505]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-5 text-sm leading-6 text-[#151515]/68">{service.description}</p>
-                  <div className="mt-8 h-px w-full bg-[#050505]/10" />
-                  <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#B8652E]">
-                    Build asset / {String(index + 1).padStart(2, "0")}
-                  </p>
-                </div>
-              </motion.article>
-            </Reveal>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-function ProofSection() {
-  return (
-    <section className="bg-[#050505] py-24 text-[#FAF8F3] sm:py-32">
-      <Container>
-        <SectionLabel>/ Proof</SectionLabel>
-        <Reveal>
-          <h2 className="font-display text-[clamp(3.7rem,10.8vw,11.8rem)] uppercase leading-[0.94]">
-            Real work. Real movement.
-          </h2>
-        </Reveal>
-        <div className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <Reveal>
-            <p className="max-w-2xl text-3xl font-semibold leading-tight sm:text-5xl">
-              From <span className="text-[#B8652E]">1.9K</span> average reel views to{" "}
-              <span className="text-[#D8341F]">59K</span> peak reach.
-            </p>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-white/68">
-              For Matha Higher Secondary School, we helped shift their Instagram presence from
-              low-performing content to high-reach, audience-relevant reels - with multiple posts
-              reaching 11K-29K+ views and one crossing 59K.
-            </p>
-          </Reveal>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {metrics.map((metric, index) => (
-              <Reveal key={metric.value} delay={index * 0.08}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="border border-white/12 bg-white/[0.035] p-6"
-                >
-                  <p className="font-display text-[clamp(4.4rem,8vw,8.5rem)] uppercase leading-none text-[#FAF8F3]">
-                    {metric.value}
-                  </p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/52">
-                    {metric.label}
-                  </p>
-                </motion.div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-        <Reveal className="mt-10">
-          <p className="border-t border-white/12 pt-5 text-sm uppercase tracking-[0.18em] text-white/45">
-            Growth-focused content systems, measured by movement instead of noise.
-          </p>
-        </Reveal>
-      </Container>
-    </section>
-  );
-}
-
-function WorkSection() {
-  return (
-    <section id="work" className="bg-[#F4F1EA] py-24 sm:py-32">
-      <Container>
-        <SectionLabel>/ Work</SectionLabel>
-        <AnimatedHeading>Selected frames of what we build.</AnimatedHeading>
-        <div className="mt-14 grid gap-4">
-          {projects.map((project, index) => (
-            <Reveal key={project.name} delay={index * 0.04}>
-              <motion.article
-                whileHover={{ x: 4 }}
-                className={cn(
-                  "group grid min-h-[420px] overflow-hidden rounded-[1.65rem] border border-[#050505]/10 md:grid-cols-[1fr_0.82fr]",
-                  index % 2 === 0 ? "bg-[#050505] text-[#FAF8F3]" : "bg-[#FAF8F3] text-[#050505]",
-                )}
-              >
-                <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-55">
-                      {String(index + 1).padStart(2, "0")} / Selected work
-                    </p>
-                    <h3 className="mt-6 font-display text-[clamp(2.9rem,7vw,8.2rem)] uppercase leading-[0.94]">
-                      {project.name}
-                    </h3>
-                    <p className="mt-6 max-w-2xl text-base leading-7 opacity-68">{project.context}</p>
-                  </div>
-                  <div className="mt-8 flex flex-wrap items-center gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-current/18 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em]">
-                        {tag}
-                      </span>
-                    ))}
-                    <span className="ml-auto grid h-12 w-12 place-items-center rounded-full border border-current/18 text-2xl transition-transform group-hover:translate-x-1">
-                      +
-                    </span>
-                  </div>
-                </div>
-                <ImageSlot src={project.image} alt={`${project.name} project placeholder`} className="min-h-[300px] rounded-none" />
-              </motion.article>
-            </Reveal>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-function ProcessSection() {
-  return (
-    <section id="process" className="bg-[#FAF8F3] py-24 sm:py-32">
-      <Container>
-        <SectionLabel>/ Process</SectionLabel>
-        <AnimatedHeading>Our process is simple. The execution is not.</AnimatedHeading>
-        <div className="mt-14 border-t border-[#050505]/14">
-          {processSteps.map((step, index) => (
-            <Reveal key={step.title}>
-              <motion.div
-                whileHover={{ backgroundColor: "#050505", color: "#FAF8F3" }}
-                className="grid gap-6 border-b border-[#050505]/14 py-8 text-[#050505] transition-colors md:grid-cols-[0.35fr_0.55fr_1fr] md:items-center"
-              >
-                <p className="font-display text-[clamp(4rem,10vw,12rem)] uppercase leading-none text-[#B8652E]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="font-display text-[clamp(2.8rem,6vw,7rem)] uppercase leading-none">{step.title}</h3>
-                <p className="max-w-2xl text-lg leading-7 opacity-72">{step.body}</p>
-              </motion.div>
-            </Reveal>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-function ClientFitSection() {
-  return (
-    <section className="bg-[#151515] py-24 text-[#FAF8F3] sm:py-32">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr]">
-          <div>
-            <SectionLabel>/ Clients</SectionLabel>
-            <Reveal>
-              <h2 className="font-display text-[clamp(3.2rem,8vw,9rem)] uppercase leading-[0.96]">
-                For businesses that are already good, but don&apos;t look like it yet.
-              </h2>
-            </Reveal>
-            <Reveal>
-              <p className="mt-8 max-w-3xl text-lg leading-8 text-white/68">
-                We work with founders, studios, schools, hospitality brands, fashion labels,
-                service businesses, and growing companies across India, UAE, and UK markets.
+            <div className="w-[245px]">
+              <div className="relative h-[142px] w-full overflow-hidden bg-neutral-200">
+                <Image
+                  src="/images/current-site/NTLzKZsMLs4oDne9oxD7kotS2w8.jpg"
+                  alt="Humaneframes project preview"
+                  fill
+                  priority
+                  sizes="245px"
+                  className="object-cover"
+                />
+              </div>
+              <p className="mt-2 text-[10px] font-medium leading-[1.05] tracking-[-0.03em]">
+                Humaneframes revealed
+                <br />
+                Matha - 2026
               </p>
-            </Reveal>
-          </div>
-          <div className="self-end border-t border-white/12">
-            {clientFits.map((fit, index) => (
-              <Reveal key={fit} delay={index * 0.04}>
-                <div className="flex items-center gap-5 border-b border-white/12 py-5">
-                  <span className="font-display text-4xl text-[#B8652E]">{String(index + 1).padStart(2, "0")}</span>
-                  <p className="text-lg font-medium">{fit}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+            </div>
+          </motion.div>
         </div>
       </Container>
     </section>
   );
 }
 
-function EngagementSection() {
+function Intro() {
   return (
-    <section className="bg-[#F4F1EA] py-24 sm:py-32">
+    <section id="about" className="pb-24">
       <Container>
-        <SectionLabel>/ Engagement</SectionLabel>
-        <AnimatedHeading>Choose the depth of build your business needs.</AnimatedHeading>
-        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {engagements.map((engagement, index) => (
-            <Reveal key={engagement.title} delay={index * 0.04}>
-              <motion.article
-                whileHover={{ y: -8 }}
-                className="flex min-h-[410px] flex-col justify-between rounded-[1.4rem] border border-[#050505]/12 bg-[#FAF8F3] p-6 text-[#050505]"
-              >
-                <div>
-                  <p className="font-display text-5xl text-[#B8652E]">{String(index + 1).padStart(2, "0")}</p>
-                  <h3 className="mt-8 font-display text-[clamp(2.25rem,4vw,4.4rem)] uppercase leading-[0.98]">
-                    {engagement.title}
-                  </h3>
-                  <p className="mt-5 text-sm leading-6 text-[#151515]/66">{engagement.bestFor}</p>
-                </div>
-                <ul className="mt-8 space-y-3 border-t border-[#050505]/12 pt-5 text-sm text-[#151515]/75">
-                  {engagement.features.map((feature) => (
-                    <li key={feature} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D8341F]" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.article>
-            </Reveal>
+        <SectionKicker>Experience</SectionKicker>
+        <h2 className="max-w-[1110px] text-[clamp(28px,4.2vw,45px)] font-semibold leading-[1.02] tracking-[-0.065em]">
+          We combine creativity, data-driven strategies, and authentic storytelling to connect your brand
+          with the right audience and drive measurable business results.
+        </h2>
+        <div className="mt-9 grid gap-9 lg:grid-cols-[570px_1fr] lg:items-end">
+          <div className="relative h-[375px] overflow-hidden bg-neutral-200">
+            <Image
+              src="/images/current-site/3B9h8AV1jrN4BPLKUhldIYfIUrw.jpg"
+              alt="Red lit editorial portrait"
+              fill
+              sizes="(max-width: 1024px) 100vw, 570px"
+              className="object-cover"
+            />
+          </div>
+          <div className="max-w-[475px] pb-3">
+            <p className="text-[12px] leading-[1.28] tracking-[-0.035em] text-black/75">
+              Humaneframes is a brand and digital experience company based in Kerala. We help brands
+              and businesses move from unclear presence to clear strategy, strong identity, and better
+              digital performance through design, technology, content, and marketing systems built
+              for real-world growth.
+            </p>
+            <div className="mt-5">
+              <Pill>Contact us</Pill>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 grid grid-cols-2 gap-px bg-black/5 md:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.value} className="bg-white px-6 py-5">
+              <p className="text-[42px] font-semibold leading-none tracking-[-0.06em]">{stat.value}</p>
+              <p className="mt-3 text-[10px] font-medium leading-none tracking-[-0.02em] text-black/55">{stat.label}</p>
+            </div>
           ))}
         </div>
-        <Reveal className="mt-10">
-          <Button href="#contact" variant="dark">
-            Request a Proposal
-          </Button>
-        </Reveal>
       </Container>
     </section>
   );
 }
 
-function MovingBand() {
+function Services() {
+  const [open, setOpen] = useState(0);
+
   return (
-    <div className="overflow-hidden border-y border-[#050505]/12 bg-[#FAF8F3] py-4 text-[#050505]">
-      <motion.div
-        className="flex w-max gap-8 font-display text-[clamp(3rem,7vw,8rem)] uppercase leading-none"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-      >
-        {Array.from({ length: 2 }).map((_, index) => (
-          <div key={index} className="flex gap-8">
-            <span>Brand</span>
-            <span className="text-[#B8652E]">Web</span>
-            <span>Content</span>
-            <span className="text-[#D8341F]">Growth</span>
-            <span>Systems</span>
+    <section id="services" className="pb-32">
+      <Container>
+        <div className="mb-8 grid gap-8 lg:grid-cols-[420px_1fr] lg:items-end">
+          <div>
+            <SectionKicker>Services</SectionKicker>
+            <h2 className="max-w-[360px] text-[clamp(30px,4vw,44px)] font-semibold leading-[1] tracking-[-0.065em]">
+              Solutions built to
+              <br />
+              scale your brand.
+            </h2>
+          </div>
+          <div className="max-w-[390px] justify-self-start lg:justify-self-end">
+            <p className="mb-4 text-[12px] leading-[1.28] tracking-[-0.035em] text-black/75">
+              We turn ideas into strategy, strategy into design, and design into systems that help
+              your brand communicate clearly and grow.
+            </p>
+            <Pill>See all services</Pill>
+          </div>
+        </div>
+        <div className="divide-y divide-black/5 bg-white">
+          {services.map((service, index) => {
+            const isOpen = open === index;
+            return (
+              <div key={service.title}>
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpen(isOpen ? -1 : index)}
+                  className="grid w-full grid-cols-[54px_1fr_28px] items-start px-6 py-6 text-left"
+                >
+                  <span className="text-[10px] leading-none text-black/65">{service.number}</span>
+                  <span className="text-[15px] font-semibold leading-none tracking-[-0.045em]">{service.title}</span>
+                  <span className="justify-self-end text-[25px] leading-[0.55]">{isOpen ? "×" : "+"}</span>
+                </button>
+                {isOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    className="grid gap-8 px-6 pb-9 pl-[78px] md:grid-cols-[1fr_1fr]"
+                  >
+                    <div>
+                      <p className="mb-5 text-[10px] font-medium leading-none tracking-[-0.02em]">What we do</p>
+                      <p className="max-w-[330px] text-[12px] leading-[1.28] tracking-[-0.035em] text-black/75">
+                        {service.overview}
+                      </p>
+                      <a href="#contact" className="mt-10 inline-flex text-[10px] font-semibold leading-none tracking-[-0.03em]">
+                        Know more +
+                      </a>
+                    </div>
+                    <div>
+                      <p className="mb-5 text-[10px] font-medium leading-none tracking-[-0.02em]">Core Capabilities</p>
+                      <ul className="space-y-2 text-[12px] leading-none tracking-[-0.035em]">
+                        {service.capabilities.map((capability) => (
+                          <li key={capability} className="flex items-center gap-2">
+                            <span>✓</span>
+                            <span>{capability}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function Work() {
+  return (
+    <section id="works" className="pb-28">
+      <Container>
+        <div className="mx-auto mb-9 max-w-[460px] text-center">
+          <SectionKicker>Projects</SectionKicker>
+          <h2 className="text-[clamp(30px,4.1vw,45px)] font-semibold leading-[0.98] tracking-[-0.065em]">
+            Selected work that speaks for itself
+          </h2>
+          <p className="mx-auto mt-4 max-w-[360px] text-[11px] leading-[1.25] tracking-[-0.035em] text-black/60">
+            Our work combines identity, campaign assets, technology, and content systems built to
+            give brands a clearer market position.
+          </p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          {works.map((work) => (
+            <article key={work.title} className="bg-white">
+              <div className="relative h-[350px] overflow-hidden bg-neutral-200">
+                <Image src={work.image} alt={work.title} fill sizes="(max-width: 768px) 100vw, 560px" className="object-cover" />
+              </div>
+              <div className="grid grid-cols-[1fr_18px] gap-4 p-4">
+                <div>
+                  <p className="mb-2 text-[10px] leading-none text-black/55">{work.year}</p>
+                  <h3 className="text-[14px] font-semibold leading-[1.08] tracking-[-0.04em]">{work.title}</h3>
+                </div>
+                <span className="mt-1 grid h-[14px] w-[14px] place-items-center rounded-full bg-black text-[9px] leading-none text-white">
+                  +
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Pill>View all works</Pill>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function CTA() {
+  const images = [
+    "/images/current-site/EJepzkyS2M6RtQT3j0VG2s9Vso.jpg",
+    "/images/current-site/GpKoxUJWRs9yBbuqb8nstIUxI.jpg",
+    "/images/current-site/JBpQeQXOMbjJ6ODB1cBghiYAxV8.jpg",
+    "/images/current-site/OslGeYkhcn7grxI5MyYovBUtyE.jpg",
+  ];
+
+  return (
+    <section id="contact" className="pb-28">
+      <Container>
+        <div className="mx-auto max-w-[450px] text-center">
+          <SectionKicker>Start with your brand</SectionKicker>
+          <h2 className="text-[clamp(30px,4vw,44px)] font-semibold leading-[0.98] tracking-[-0.065em]">
+            Ready to build a bold, purposeful brand?
+          </h2>
+          <p className="mx-auto mt-4 max-w-[360px] text-[11px] leading-[1.25] tracking-[-0.035em] text-black/60">
+            Have questions? We&apos;ll help you clarify what to do next.
+          </p>
+          <div className="mt-5 flex justify-center gap-2">
+            <Pill>Start a project</Pill>
+            <Pill href="#services" variant="light">
+              Explore our services
+            </Pill>
+          </div>
+        </div>
+      </Container>
+      <div className="mt-12 flex gap-4 overflow-hidden px-5">
+        {images.map((image, index) => (
+          <div key={image} className={`relative h-[310px] shrink-0 overflow-hidden bg-neutral-200 ${index === 0 ? "w-[360px]" : "w-[330px]"}`}>
+            <Image src={image} alt="Humaneframes brand detail" fill sizes="360px" className="object-cover" />
           </div>
         ))}
-      </motion.div>
-    </div>
-  );
-}
-
-function FinalCTA() {
-  return (
-    <section id="contact" className="bg-[#050505] py-24 text-[#FAF8F3] sm:py-32">
-      <Container>
-        <Reveal>
-          <h2 className="max-w-7xl font-display text-[clamp(3.5rem,10.4vw,12rem)] uppercase leading-[0.94]">
-            If your business is serious, your digital presence should stop looking accidental.
-          </h2>
-        </Reveal>
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.55fr] lg:items-end">
-          <Reveal>
-            <p className="max-w-2xl text-xl leading-8 text-white/68">
-              Tell us what you are building. We&apos;ll show you what needs to change.
-            </p>
-          </Reveal>
-          <Reveal delay={0.08} className="lg:text-right">
-            <Button href="mailto:hello.humaneframes@gmail.com" variant="light" className="w-full sm:w-auto">
-              Start a Project
-            </Button>
-          </Reveal>
-        </div>
-      </Container>
+      </div>
     </section>
   );
 }
 
 function Footer() {
   return (
-    <footer className="bg-[#050505] pb-8 text-[#FAF8F3]">
+    <footer className="border-t border-black/10 pb-9 pt-20">
       <Container>
-        <div className="border-t border-white/12 pt-8">
-          <div className="grid gap-8 md:grid-cols-[1fr_1fr_1fr]">
-            <div>
-              <p className="font-display text-5xl uppercase leading-none">Humaneframes</p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/48">
-                Brand / Web / Content / Growth
-              </p>
-            </div>
-            <div className="text-sm leading-7 text-white/62">
-              <p>Independent brand and digital studio.</p>
-              <p>India / UAE / UK-ready positioning.</p>
-              <a className="transition-colors hover:text-white" href="mailto:hello.humaneframes@gmail.com">
-                hello.humaneframes@gmail.com
-              </a>
-            </div>
-            <div className="flex items-start gap-3 md:justify-end">
-              {["Instagram", "LinkedIn", "Behance"].map((item) => (
-                <a
-                  key={item}
-                  href="#top"
-                  className="rounded-full border border-white/15 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/62 transition-colors hover:border-white hover:text-white"
-                >
-                  {item}
-                </a>
-              ))}
+        <h2 className="text-[20px] font-bold leading-none tracking-[-0.05em]">Humaneframes.</h2>
+        <div className="mt-16 grid gap-12 border-t border-black/10 pt-8 md:grid-cols-[1fr_1.2fr]">
+          <div className="max-w-[360px]">
+            <p className="text-[12px] leading-[1.28] tracking-[-0.035em] text-black/75">
+              A joined brand and digital methodology crafted to improve clarity, credibility, and
+              measurable market performance.
+            </p>
+            <div className="mt-5">
+              <Pill>Contact us</Pill>
             </div>
           </div>
-          <p className="mt-10 text-xs uppercase tracking-[0.16em] text-white/32">
-            Copyright {new Date().getFullYear()} Humaneframes. All rights reserved.
-          </p>
+          <div className="grid grid-cols-3 gap-8">
+            {Object.entries(footerLinks).map(([title, links]) => (
+              <div key={title}>
+                <p className="mb-5 text-[10px] font-medium leading-none tracking-[-0.02em]">{title}</p>
+                <ul className="space-y-2 text-[10px] leading-[1.1] tracking-[-0.02em] text-black/65">
+                  {links.map((link) => (
+                    <li key={link}>{link}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-24 flex items-center justify-between border-t border-black/5 pt-8 text-[10px] leading-none text-black/55">
+          <p>© 2026 Humaneframes. All rights reserved.</p>
+          <p>Terms of Service · Privacy Policy</p>
         </div>
       </Container>
     </footer>
@@ -690,18 +417,13 @@ function Footer() {
 
 export default function HumaneframesLanding() {
   return (
-    <main className="min-h-screen bg-[#F4F1EA]">
+    <main className="min-h-screen bg-[#f3f3f1] text-black">
       <Nav />
       <Hero />
-      <StudioIntro />
-      <Capabilities />
-      <ProofSection />
-      <WorkSection />
-      <ProcessSection />
-      <ClientFitSection />
-      <EngagementSection />
-      <MovingBand />
-      <FinalCTA />
+      <Intro />
+      <Services />
+      <Work />
+      <CTA />
       <Footer />
     </main>
   );

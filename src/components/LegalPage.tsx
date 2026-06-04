@@ -7,9 +7,9 @@ export default function LegalPage({ slug }: { slug: keyof typeof legalPages }) {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav />
-      <section className="pt-[170px]">
+      <section className="pt-[190px]">
         <Container>
-          <h1 className="text-[clamp(46px,5.6vw,72px)] font-semibold leading-none tracking-[-0.075em]">
+          <h1 className="text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
             {page.title}
           </h1>
           <p className="mt-10 text-[13px] leading-none tracking-[-0.035em] text-black/60">

@@ -10,13 +10,13 @@ export default function BlogDetailPage({ slug }: { slug: string }) {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav />
-      <section className="pt-[170px]">
+      <section className="pt-[190px]">
         <Container>
           <p className="mb-8 text-[13px] font-medium leading-none tracking-[-0.035em] text-black/60">
             Blog / {post.category}
           </p>
           <div className="grid gap-16 lg:grid-cols-[1fr_0.8fr]">
-            <h1 className="max-w-[850px] text-[clamp(42px,5.2vw,72px)] font-semibold leading-[0.98] tracking-[-0.075em]">
+            <h1 className="max-w-[850px] text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
               {post.title}
             </h1>
             <div className="max-w-[520px] self-end">

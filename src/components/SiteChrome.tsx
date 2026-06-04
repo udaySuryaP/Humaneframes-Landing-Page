@@ -3,7 +3,7 @@ import Image from "next/image";
 import { footerCopy, navItems } from "@/lib/site-content";
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-5 ${className}`}>{children}</div>;
+  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
 }
 
 export function Pill({
@@ -32,8 +32,8 @@ export function Pill({
 
 export function SiteNav({ active }: { active?: string }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#f7f7f7]/95 backdrop-blur-sm">
-      <Container className="flex h-[64px] items-center justify-between md:h-[89px]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]/95 backdrop-blur-sm">
+      <Container className="flex h-[61px] items-center justify-between md:h-[89px]">
         <Link href="/" className="relative block h-[28px] w-[112px] md:h-[39px] md:w-[156px]">
           <Image
             src="/assets/framer/humaneframes-logo.png"

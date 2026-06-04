@@ -11,11 +11,11 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav />
-      <section className="pt-[170px]">
+      <section className="pt-[190px]">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
-              <h1 className="text-[clamp(48px,5.6vw,72px)] font-semibold leading-none tracking-[-0.075em]">
+              <h1 className="text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
                 Get in touch
               </h1>
               <p className="mt-14 max-w-[150px] text-[13px] leading-[1.18] tracking-[-0.035em] text-black/75">
@@ -60,9 +60,9 @@ export default function ContactPage() {
                 <textarea className="h-44 w-full resize-none bg-transparent text-[18px] outline-none" />
               </label>
               <div className="bg-white p-8">
-                <button type="button" className="inline-flex h-[31px] items-center gap-1 rounded-full bg-black px-4 text-[11px] font-semibold leading-none tracking-[-0.02em] text-white">
+                <button type="button" className="inline-flex h-[39px] items-center gap-2 rounded-full bg-black px-4 text-[16px] font-medium leading-[1.2] text-white">
                   Submit message
-                  <span className="h-1 w-1 rounded-full bg-[#d71916]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#fd2400]" />
                 </button>
               </div>
             </form>

@@ -11,12 +11,12 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav active="Projects" />
-      <section className="pt-[170px]">
+      <section className="pt-[190px]">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
               <p className="mb-8 text-[13px] leading-none tracking-[-0.035em] text-black/65">{project.year}</p>
-              <h1 className="max-w-[720px] text-[clamp(42px,5.2vw,72px)] font-semibold leading-[0.98] tracking-[-0.075em]">
+              <h1 className="max-w-[720px] text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
                 {project.title}
               </h1>
             </div>

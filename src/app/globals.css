@@ -33,6 +33,12 @@ body {
   font-family: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: -0.03em;
+}
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;

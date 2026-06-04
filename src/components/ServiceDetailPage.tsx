@@ -10,11 +10,11 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav active="Services" />
-      <section className="pt-[170px]">
+      <section className="pt-[190px]">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
-              <h1 className="max-w-[680px] text-[clamp(46px,5.6vw,76px)] font-semibold leading-[0.96] tracking-[-0.075em]">
+              <h1 className="max-w-[680px] text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
                 {service.title}
               </h1>
             </div>

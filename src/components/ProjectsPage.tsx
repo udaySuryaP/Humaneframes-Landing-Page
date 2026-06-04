@@ -7,11 +7,11 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav active="Projects" />
-      <section className="pt-[170px]">
+      <section className="pb-[134px] pt-[190px]">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
-              <h1 className="text-[clamp(48px,5.6vw,72px)] font-semibold leading-none tracking-[-0.075em]">
+              <h1 className="text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
                 Projects
               </h1>
               <p className="mt-14 text-[13px] leading-none tracking-[-0.035em] text-black/70">(2021-2026)</p>
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
           <div className="grid gap-5 md:grid-cols-2">
             {projects.map((project) => (
               <Link key={project.slug} href={`/projects/${project.slug}`} className="group bg-white">
-                <div className="relative h-[440px] overflow-hidden bg-neutral-200">
+                <div className="relative h-[395px] overflow-hidden bg-neutral-200">
                   <Image
                     src={project.image}
                     alt={project.title}

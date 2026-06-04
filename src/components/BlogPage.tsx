@@ -10,11 +10,11 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav />
-      <section className="pt-[170px]">
+      <section className="pt-[190px]">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
-              <h1 className="max-w-[720px] text-[clamp(48px,5.6vw,72px)] font-semibold leading-none tracking-[-0.075em]">
+              <h1 className="max-w-[720px] text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">
                 News and Insights
               </h1>
               <p className="mt-14 max-w-[210px] text-[13px] leading-[1.18] tracking-[-0.035em] text-black/75">

@@ -28,7 +28,7 @@ const quickLinks = ["Home", "Services", "Projects", "About", "Contact"];
 const socials = ["LinkedIn", "Instagram", "Facebook"];
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-5 ${className}`}>{children}</div>;
+  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
 }
 
 function Pill({ children, href = "/#contact" }: { children: React.ReactNode; href?: string }) {
@@ -62,8 +62,8 @@ function Nav() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#f7f7f7]">
-      <Container className="flex h-16 items-center justify-between md:h-[89px]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]">
+      <Container className="flex h-[61px] items-center justify-between md:h-[89px]">
         <Link href="/" aria-label="Humaneframes home">
           <Image
             src="/assets/framer/humaneframes-logo.png"
@@ -99,7 +99,7 @@ function Hero() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-[1fr_2.05fr]">
           <div>
-            <h1 className="text-[clamp(44px,5.2vw,64px)] font-semibold leading-none tracking-[-0.065em]">About</h1>
+            <h1 className="text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">About</h1>
             <p className="mt-16 max-w-[130px] text-[13px] leading-[1.18] tracking-[-0.035em] text-black/70">
               Where strategy
               <br />
@@ -143,9 +143,9 @@ function ImageCard({
 
 function Bento() {
   return (
-    <section className="pt-[92px]">
+    <section className="pt-[120px]">
       <Container>
-        <div className="grid gap-5 lg:grid-cols-[1.45fr_0.95fr_0.95fr] lg:grid-rows-[320px_320px]">
+        <div className="grid gap-5 lg:grid-cols-[1.45fr_0.95fr_0.95fr] lg:grid-rows-[340px_340px]">
           <ImageCard
             src="/images/about/sxgSA7cXJI7Dz9f0EEMmC2mUl6M.jpg"
             alt="Camera operator filming in studio"

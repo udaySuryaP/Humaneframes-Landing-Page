@@ -83,7 +83,7 @@ const ctaImages = [
 ];
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-5 ${className}`}>{children}</div>;
+  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
 }
 
 function Pill({
@@ -127,8 +127,8 @@ function Nav() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#f7f7f7]/95 backdrop-blur-sm">
-      <Container className="flex h-[64px] items-center justify-between md:h-[89px]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]/95 backdrop-blur-sm">
+      <Container className="flex h-[61px] items-center justify-between md:h-[89px]">
         <Link href="/" className="relative block h-[28px] w-[112px] md:h-[39px] md:w-[156px]">
           <Image
             src="/assets/framer/humaneframes-logo.png"
@@ -164,7 +164,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="pb-[58px] pt-[96px] md:pt-[138px]">
+    <section id="top" className="pb-[58px] pt-[121px] md:pt-[138px]">
       <Container>
         <div>
           <motion.div
@@ -175,17 +175,17 @@ function Hero() {
             <h1 className="max-w-[850px] text-[clamp(42px,5.05vw,64px)] font-semibold leading-[1.2]">
               We are an independent brand and digital company crafting bold identities and experiences that drive real business growth
             </h1>
-            <div className="mt-[50px] flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-              <div className="max-w-[325px]">
-              <p className="text-[18px] font-medium leading-[1.4] text-black">
-                From brand identity to digital experiences and growth strategy, we design, build, and scale everything your brand needs to stand out and perform under one roof.
-              </p>
-              <div className="mt-[30px] flex items-center gap-[10px]">
-                <Pill href="/contact">Start a project</Pill>
-                <Pill href="#works" variant="light">
-                  Our Work
-                </Pill>
-              </div>
+            <div className="mt-[30px] flex flex-col gap-[45px] md:mt-[50px] md:flex-row md:items-start md:justify-between md:gap-10">
+              <div className="order-2 max-w-[325px] md:order-1">
+                <p className="text-[18px] font-medium leading-[1.4] text-black">
+                  From brand identity to digital experiences and growth strategy, we design, build, and scale everything your brand needs to stand out and perform under one roof.
+                </p>
+                <div className="mt-[30px] flex items-center gap-[10px]">
+                  <Pill href="/contact">Start a project</Pill>
+                  <Pill href="#works" variant="light">
+                    Our Work
+                  </Pill>
+                </div>
               </div>
               <HeroShowreel />
             </div>
@@ -208,9 +208,9 @@ function HeroShowreel() {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
-      className="w-full md:w-[300px]"
+      className="order-1 w-full md:order-2 md:w-[300px]"
     >
-      <div className="relative h-[180px] w-full overflow-hidden bg-neutral-200">
+      <div className="relative h-[216px] w-full overflow-hidden bg-neutral-200 md:h-[180px]">
         {frames.map((src, index) => (
           <Image
             key={src}
@@ -227,7 +227,7 @@ function HeroShowreel() {
       <p className="mt-[5px] text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">
         Humaneframes showreel
         <br />
-        (Clients - 2025/2026)
+        (Clients &mdash; 2025/2026)
       </p>
     </motion.div>
   );
@@ -235,7 +235,7 @@ function HeroShowreel() {
 
 function PageVideo() {
   return (
-    <section className="relative h-[430px] overflow-hidden bg-neutral-200 md:h-[738px]">
+    <section className="relative h-[500px] overflow-hidden bg-neutral-200 md:h-[738px]">
       <video
         className="h-full w-full object-cover"
         src="/assets/framer/hero-showreel.mp4"
@@ -293,7 +293,7 @@ function Services() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="services" className="pb-[100px]">
+    <section id="services" className="pb-[249px]">
       <Container>
         <div className="mb-[50px] grid gap-8 lg:grid-cols-[550px_367px] lg:items-end lg:justify-between">
           <div>

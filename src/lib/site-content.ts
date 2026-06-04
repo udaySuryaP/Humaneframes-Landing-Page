@@ -12,7 +12,7 @@ export const serviceCards = [
   {
     slug: "brand-design",
     title: "Brand Design",
-    image: "/images/current-site/zPUO9i2faY3isBbWfnNPM81CN4.jpg",
+    image: "/images/current-site/bpd9RWgQvpydO41GdoQUo10UlPw.jpg",
     description:
       "We build the complete foundation of your brand, from the visual identity people see to the strategy that drives its growth. Every element is designed to be distinct, consistent, and built to scale with your business.",
     capabilities: ["Brand Identity", "Brand Foundation", "Brand Systems", "Growth Strategy", "Visual Identity and Uniformity"],
@@ -35,7 +35,7 @@ export const serviceCards = [
   {
     slug: "ui-ux-design",
     title: "UI/UX Design",
-    image: "/images/current-site/bpd9RWgQvpydO41GdoQUo10UlPw.jpg",
+    image: "/images/current-site/3BuqjS6anIrB3qY0jvqIidOKY.jpg",
     description:
       "We research, design, and prototype digital interfaces that make sense from the first interaction. Every screen we design is built around how your users actually think and what your business needs them to do.",
     capabilities: ["User Research", "Wireframing and Prototyping", "Figma Design", "Design Systems", "Experience Design"],
@@ -58,7 +58,7 @@ export const serviceCards = [
   {
     slug: "web-and-app-development",
     title: "Web and App Development",
-    image: "/images/current-site/3BuqjS6anIrB3qY0jvqIidOKY.jpg",
+    image: "/images/current-site/zPUO9i2faY3isBbWfnNPM81CN4.jpg",
     description:
       "We build websites and applications that load fast, look sharp, and convert visitors into customers. From marketing sites to full web applications, every build is performance first and built to grow with your business.",
     capabilities: ["SaaS Development", "Mobile App Development", "Ecommerce Development", "Custom Panels and Dashboards", "CMS Development"],

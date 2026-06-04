@@ -5,7 +5,7 @@ import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#f3f3f1] text-black">
+    <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav active="Projects" />
       <section className="pt-[170px]">
         <Container>

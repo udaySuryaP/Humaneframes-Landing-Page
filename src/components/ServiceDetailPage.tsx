@@ -8,7 +8,7 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
   const more = serviceCards.filter((item) => item.slug !== service.slug).slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-[#f3f3f1] text-black">
+    <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav active="Services" />
       <section className="pt-[170px]">
         <Container>

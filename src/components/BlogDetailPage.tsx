@@ -8,7 +8,7 @@ export default function BlogDetailPage({ slug }: { slug: string }) {
   const more = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#f3f3f1] text-black">
+    <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav />
       <section className="pt-[170px]">
         <Container>

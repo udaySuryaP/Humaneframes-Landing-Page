@@ -28,23 +28,29 @@ const quickLinks = ["Home", "Services", "Projects", "About", "Contact"];
 const socials = ["LinkedIn", "Instagram", "Facebook"];
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`mx-auto w-full max-w-[1376px] px-5 sm:px-7 lg:px-8 ${className}`}>{children}</div>;
+  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-5 ${className}`}>{children}</div>;
 }
 
 function Pill({ children, href = "/#contact" }: { children: React.ReactNode; href?: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex h-[31px] items-center gap-1 rounded-full bg-black px-4 text-[11px] font-semibold leading-none tracking-[-0.02em] text-white"
+      className="inline-flex h-[39px] items-center gap-2 rounded-full bg-black px-4 text-[16px] font-medium leading-[1.2] text-white transition-transform duration-300 hover:scale-[0.98]"
     >
       {children}
-      <span className="h-1 w-1 rounded-full bg-[#d71916]" />
+      <span className="h-1 w-1 rounded-full bg-[#fd2400]" />
     </Link>
   );
 }
 
 function Kicker({ children }: { children: React.ReactNode }) {
-  return <p className="mb-5 text-[10px] font-medium uppercase leading-none tracking-[-0.015em] text-black">[<span className="text-[#d71916]">{children}</span>]</p>;
+  return (
+    <p className="mb-[10px] text-[14px] font-semibold uppercase leading-[1.4] text-[#4f4f4f]">
+      <span className="text-[#fd2400]">[</span>
+      {children}
+      <span className="text-[#fd2400]">]</span>
+    </p>
+  );
 }
 
 function Nav() {
@@ -56,20 +62,32 @@ function Nav() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f3f3f1]/95 backdrop-blur-sm">
-      <Container className="flex h-[82px] items-center justify-between">
-        <Link href="/" className="text-[15px] font-bold leading-none tracking-[-0.05em]">
-          Humaneframes.
+    <header className="fixed inset-x-0 top-0 z-50 bg-[#f7f7f7]">
+      <Container className="flex h-16 items-center justify-between md:h-[89px]">
+        <Link href="/" aria-label="Humaneframes home">
+          <Image
+            src="/assets/framer/humaneframes-logo.png"
+            alt="Humaneframes."
+            width={156}
+            height={39}
+            priority
+            className="h-7 w-28 object-contain md:h-[39px] md:w-[156px]"
+          />
         </Link>
-        <nav className="hidden items-center gap-9 text-[12px] font-semibold leading-none tracking-[-0.035em] md:flex">
+        <nav className="hidden items-center gap-[30px] text-[16px] font-medium leading-[1.2] md:flex">
           {links.map((link) => (
-            <Link key={link.label} href={link.href} className="relative hover:opacity-60">
+            <Link key={link.label} href={link.href} className="relative transition-opacity hover:opacity-60">
               {link.label}
-              {link.active && <span className="absolute -right-2 top-1/2 h-1 w-1 -translate-y-1/2 rounded-full bg-[#d71916]" />}
+              {link.active && <span className="absolute -right-2 top-[5px] h-[5px] w-[5px] rounded-full bg-[#fa2837]" />}
             </Link>
           ))}
         </nav>
-        <Pill href="/#contact">Contact us</Pill>
+        <div className="hidden md:block">
+          <Pill href="/contact">Contact us</Pill>
+        </div>
+        <Link href="/contact" className="text-[15px] font-medium leading-[1.2] md:hidden">
+          Menu
+        </Link>
       </Container>
     </header>
   );
@@ -228,9 +246,13 @@ function Footer() {
   return (
     <footer className="mt-[760px] border-t border-black/10 pb-12 pt-28">
       <Container>
-        <h2 className="text-[38px] font-bold leading-none tracking-[-0.065em]">
-          Humaneframes<span className="text-[#d71916]">.</span>
-        </h2>
+        <Image
+          src="/assets/framer/humaneframes-logo.png"
+          alt="Humaneframes."
+          width={300}
+          height={75}
+          className="h-[75px] w-[300px] object-contain"
+        />
 
         <div className="mt-16 grid gap-12 border-t border-black/10 pt-12 lg:grid-cols-[1.6fr_0.55fr_0.8fr_0.45fr]">
           <div className="max-w-[335px]">
@@ -269,7 +291,7 @@ function Footer() {
         </div>
 
         <div className="mt-32 flex flex-col gap-5 border-t border-black/10 pt-10 text-[11px] font-medium leading-none tracking-[-0.03em] sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Humaneframes. All rights reserved.</p>
+          <p>&copy; 2026 Humaneframes. All rights reserved.</p>
           <p>Terms of Service&nbsp;&nbsp;&nbsp; Privacy Policy</p>
         </div>
       </Container>
@@ -279,7 +301,7 @@ function Footer() {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#f3f3f1] text-black">
+    <main className="min-h-screen bg-[#f7f7f7] text-black">
       <Nav />
       <Hero />
       <Bento />

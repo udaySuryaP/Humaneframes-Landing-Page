@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f1ea;
+  --background: #f7f7f7;
   --foreground: #050505;
+  --hf-muted: #4f4f4f;
+  --hf-red: #fd2400;
 }
 
 @theme inline {
@@ -48,6 +50,43 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+.showreel-frame {
+  animation: hf-showreel-fade 7.2s infinite;
+  opacity: 0;
+}
+
+.hf-marquee {
+  animation: hf-marquee 38s linear infinite;
+}
+
+.hf-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes hf-showreel-fade {
+  0%,
+  8% {
+    opacity: 0;
+  }
+  14%,
+  33% {
+    opacity: 1;
+  }
+  42%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hf-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-2520px, 0, 0);
+  }
 }
 
 .font-display {

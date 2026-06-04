@@ -7,7 +7,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
       <SiteNav active="Projects" />
-      <section className="pb-[134px] pt-[190px]">
+      <section className="pb-[17px] pt-[121px] md:pb-[134px] md:pt-[190px]">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[minmax(220px,426px)_minmax(0,650px)] lg:justify-between">
             <div>
@@ -29,12 +29,12 @@ export default function ProjectsPage() {
         </Container>
       </section>
 
-      <section className="pt-[92px]">
+      <section className="pt-0 md:pt-[84px]">
         <Container>
-          <div className="mx-auto grid max-w-[1206px] gap-[20px] md:grid-cols-2">
+          <div className="grid gap-[20px] md:grid-cols-2">
             {projects.map((project) => (
               <Link key={project.slug} href={`/projects/${project.slug}`} className="group bg-white">
-                <div className="relative h-[395px] overflow-hidden bg-neutral-200">
+                <div className="relative aspect-[3/2] overflow-hidden bg-neutral-200">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="grid min-h-[96px] grid-cols-[1fr_18px] gap-4 px-[20px] py-[20px]">
+                <div className="grid min-h-[136px] grid-cols-[1fr_18px] gap-4 px-[20px] py-[20px] md:min-h-[146px]">
                   <div>
                     <p className="mb-[10px] text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">{project.year}</p>
                     <h2 className="text-[18px] font-semibold leading-[1.25] tracking-[-0.03em]">{project.title}</h2>

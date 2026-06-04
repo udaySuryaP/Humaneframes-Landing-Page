@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SiteNav } from "@/components/SiteChrome";
 
 const values = [
   {
@@ -28,7 +29,7 @@ const quickLinks = ["Home", "Services", "Projects", "About", "Contact"];
 const socials = ["LinkedIn", "Instagram", "Facebook"];
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
+  return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
 }
 
 function Pill({ children, href = "/#contact" }: { children: React.ReactNode; href?: string }) {
@@ -53,46 +54,6 @@ function Kicker({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Nav() {
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about", active: true },
-    { label: "Services", href: "/#services" },
-    { label: "Projects", href: "/#works" },
-  ];
-
-  return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]">
-      <Container className="flex h-[61px] items-center justify-between md:h-[89px]">
-        <Link href="/" aria-label="Humaneframes home">
-          <Image
-            src="/assets/framer/humaneframes-logo.png"
-            alt="Humaneframes."
-            width={156}
-            height={39}
-            priority
-            className="h-7 w-28 object-contain md:h-[39px] md:w-[156px]"
-          />
-        </Link>
-        <nav className="hidden items-center gap-[30px] text-[16px] font-medium leading-[1.2] md:flex">
-          {links.map((link) => (
-            <Link key={link.label} href={link.href} className="relative transition-opacity hover:opacity-60">
-              {link.label}
-              {link.active && <span className="absolute -right-2 top-[5px] h-[5px] w-[5px] rounded-full bg-[#fa2837]" />}
-            </Link>
-          ))}
-        </nav>
-        <div className="hidden md:block">
-          <Pill href="/contact">Contact us</Pill>
-        </div>
-        <Link href="/contact" className="text-[15px] font-medium leading-[1.2] md:hidden">
-          Menu
-        </Link>
-      </Container>
-    </header>
-  );
-}
-
 function Hero() {
   return (
     <section className="pt-[190px]">
@@ -113,7 +74,7 @@ function Hero() {
               design, and technology to help businesses stand out and scale with confidence.
             </p>
             <div className="mt-5">
-              <Pill href="/#services">Our services</Pill>
+              <Pill href="/services">Our services</Pill>
             </div>
           </div>
         </div>
@@ -302,7 +263,7 @@ function Footer() {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
-      <Nav />
+      <SiteNav active="About" />
       <Hero />
       <Bento />
       <Values />

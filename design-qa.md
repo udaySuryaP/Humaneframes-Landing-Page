@@ -19,6 +19,10 @@ Patches made
 - Added Framer-like motion: showreel thumbnail fade rotation, CTA image marquee, hover scale on pills, service accordion height/opacity transition, and project image hover zoom.
 - Updated shared nav/footer chrome to use the real Humaneframes logo image and Framer-sized header/buttons.
 - Corrected subpage hero typography/spacing, mobile home hero order, services page image mapping, and the Brand Design service image placement against the Framer route.
+- Rebuilt the services index from the live Framer `/services` route: four published service rows, alternating image/text layout, 875x559-class desktop media, 378x294 mobile media, and Framer 16/18px service copy rhythm.
+- Rebuilt individual service pages from the live Framer `/services/brand-design` route: intro, 1205x762-class hero image, offer/package details, pricing, and related service image grid.
+- Standardized every page to the shared navbar and changed service nav targets to `/services`.
+- Reordered project detail pages to intro, full-width hero image, project details, then image gallery.
 - Preserved the user's request to hide the y-axis scrollbar while keeping page scroll functional.
 
 Required fidelity surfaces

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { SiteNav } from "@/components/SiteChrome";
 
 const services = [
   {
@@ -83,7 +84,7 @@ const ctaImages = [
 ];
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
+  return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
 }
 
 function Pill({
@@ -115,50 +116,6 @@ function SectionKicker({ children, className = "" }: { children: React.ReactNode
     <p className={`mb-[10px] text-[14px] font-semibold uppercase leading-[1.4] text-[#4f4f4f] ${className}`}>
       <span className="text-[#fd2400]">[</span>{children}<span className="text-[#fd2400]">]</span>
     </p>
-  );
-}
-
-function Nav() {
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Projects", href: "/projects" },
-  ];
-
-  return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]/95 backdrop-blur-sm">
-      <Container className="flex h-[61px] items-center justify-between md:h-[89px]">
-        <Link href="/" className="relative block h-[28px] w-[112px] md:h-[39px] md:w-[156px]">
-          <Image
-            src="/assets/framer/humaneframes-logo.png"
-            alt="Humaneframes"
-            fill
-            priority
-            sizes="156px"
-            className="object-contain"
-          />
-        </Link>
-        <nav className="hidden items-center gap-[30px] text-[16px] font-semibold leading-[1.2] md:flex">
-          {links.map((link, index) => (
-            <Link key={link.label} href={link.href} className="relative transition-opacity hover:opacity-60">
-              {link.label}
-              {index === 0 && <span className="absolute -right-2.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#fa2837]" />}
-            </Link>
-          ))}
-        </nav>
-        <div className="hidden md:block">
-          <Pill href="/contact">Contact us</Pill>
-        </div>
-        <button className="flex items-center gap-3 text-[16px] font-semibold leading-none md:hidden" type="button">
-          Menu
-          <span className="flex h-4 w-5 flex-col justify-center gap-[5px]">
-            <span className="h-px w-full bg-black" />
-            <span className="h-px w-full bg-black" />
-          </span>
-        </button>
-      </Container>
-    </header>
   );
 }
 
@@ -486,7 +443,7 @@ function FooterList({ title, items }: { title: string; items: string[] }) {
 export default function HumaneframesLanding() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
-      <Nav />
+      <SiteNav active="Home" />
       <Hero />
       <PageVideo />
       <Intro />

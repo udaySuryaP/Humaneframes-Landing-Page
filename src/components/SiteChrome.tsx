@@ -3,7 +3,7 @@ import Image from "next/image";
 import { footerCopy, navItems } from "@/lib/site-content";
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full max-w-[1265px] px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
+  return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
 }
 
 export function Pill({
@@ -44,7 +44,7 @@ export function SiteNav({ active }: { active?: string }) {
             className="object-contain"
           />
         </Link>
-        <nav className="hidden items-center gap-[30px] text-[16px] font-semibold leading-[1.2] md:flex">
+        <nav className="hidden items-center gap-[30px] text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] md:flex">
           {navItems.map((link) => (
             <Link key={link.label} href={link.href} className="relative hover:opacity-60">
               {link.label}
@@ -57,7 +57,7 @@ export function SiteNav({ active }: { active?: string }) {
         <div className="hidden md:block">
           <Pill href="/contact">Contact us</Pill>
         </div>
-        <Link href="/contact" className="text-[16px] font-semibold leading-none md:hidden">
+        <Link href="/contact" className="text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] md:hidden">
           Menu
         </Link>
       </Container>

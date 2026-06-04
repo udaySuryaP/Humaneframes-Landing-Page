@@ -30,7 +30,7 @@ export const serviceCards = [
       "Brand system guidelines across all digital touchpoints",
       "Growth strategy and market positioning framework",
     ],
-    price: "₹45,000",
+    price: "\u20b945,000",
   },
   {
     slug: "ui-ux-design",
@@ -53,7 +53,7 @@ export const serviceCards = [
       "High fidelity screen designs with component library",
       "Developer ready handoff files and design system",
     ],
-    price: "₹25,000",
+    price: "\u20b925,000",
   },
   {
     slug: "web-and-app-development",
@@ -71,7 +71,7 @@ export const serviceCards = [
     ],
     benefits: ["Fast Load Times", "Conversion Ready", "Scalable Systems", "Clean Handoff"],
     includes: ["Responsive website or app build", "Frontend development", "CMS or dashboard setup", "Launch support"],
-    price: "₹55,000",
+    price: "\u20b955,000",
   },
   {
     slug: "content-and-storytelling",
@@ -89,7 +89,7 @@ export const serviceCards = [
     ],
     benefits: ["Clearer Messaging", "Consistent Content", "Stronger Recall", "More Useful Campaigns"],
     includes: ["Narrative direction", "Campaign copy", "Reel/content formats", "Production planning"],
-    price: "₹30,000",
+    price: "\u20b930,000",
   },
   {
     slug: "ads-and-growth",
@@ -107,7 +107,7 @@ export const serviceCards = [
     ],
     benefits: ["Better Targeting", "Measured Spend", "Sharper Creatives", "Performance Learning"],
     includes: ["Campaign planning", "Ad creative set", "Launch setup", "Performance reporting"],
-    price: "₹35,000",
+    price: "\u20b935,000",
   },
   {
     slug: "social-media-marketing",
@@ -125,7 +125,7 @@ export const serviceCards = [
     ],
     benefits: ["Consistent Presence", "Audience Growth", "Better Engagement", "Clear Reporting"],
     includes: ["Monthly calendar", "Content production", "Posting and management", "Performance review"],
-    price: "₹20,000",
+    price: "\u20b920,000",
   },
 ];
 

@@ -37,18 +37,9 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
       </section>
 
       <section className="pt-[92px]">
-        <Container>
-          <div className="relative h-[720px] overflow-hidden bg-neutral-200">
-            <Image src={project.image} alt={project.title} fill priority sizes="100vw" className="object-cover" />
-          </div>
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
-            {project.gallery.slice(1).map((image, index) => (
-              <div key={image} className={`${index === 2 ? "md:col-span-2" : ""} relative h-[520px] overflow-hidden bg-neutral-200`}>
-                <Image src={image} alt={`${project.title} image ${index + 2}`} fill sizes="(max-width: 768px) 100vw, 680px" className="object-cover" />
-              </div>
-            ))}
-          </div>
-        </Container>
+        <div className="relative h-[420px] w-full overflow-hidden bg-neutral-200 md:h-[720px]">
+          <Image src={project.image} alt={project.title} fill priority sizes="100vw" className="object-cover" />
+        </div>
       </section>
 
       {detail && (
@@ -83,6 +74,18 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
           </Container>
         </section>
       )}
+
+      <section className="pt-24">
+        <Container>
+          <div className="grid gap-5 md:grid-cols-2">
+            {project.gallery.slice(1).map((image, index) => (
+              <div key={image} className={`${index === 2 ? "md:col-span-2" : ""} relative h-[360px] overflow-hidden bg-neutral-200 md:h-[520px]`}>
+                <Image src={image} alt={`${project.title} image ${index + 2}`} fill sizes="(max-width: 768px) 100vw, 680px" className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <section className="pt-28">
         <Container>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerCopy, navItems } from "@/lib/site-content";
+import { MobileNav } from "@/components/MobileNav";
 
 const bookingHref = "https://cal.com/humaneframes/30min";
 
@@ -38,9 +39,9 @@ export function Pill({
 
 export function SiteNav({ active }: { active?: string }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]/95 backdrop-blur-sm">
-      <Container className="flex h-[61px] items-center justify-between md:h-[89px]">
-        <Link href="/" className="relative block h-[28px] w-[112px] md:h-[39px] md:w-[156px]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f7]">
+      <Container className="flex h-[61px] items-center justify-between lg:h-[89px]">
+        <Link href="/" className="relative block h-[28px] w-[112px] lg:h-[39px] lg:w-[156px]">
           <Image
             src="/assets/framer/humaneframes-logo.png"
             alt="Humaneframes"
@@ -50,7 +51,7 @@ export function SiteNav({ active }: { active?: string }) {
             className="object-contain"
           />
         </Link>
-        <nav className="hidden items-center gap-[30px] text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] md:flex">
+        <nav className="hidden items-center gap-[30px] text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] lg:flex">
           {navItems.map((link) => (
             <Link key={link.label} href={link.href} className="relative hover:opacity-60">
               {link.label}
@@ -60,28 +61,10 @@ export function SiteNav({ active }: { active?: string }) {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Pill href="/contact">Contact us</Pill>
         </div>
-        <details className="group relative md:hidden">
-          <summary className="flex cursor-pointer list-none items-center gap-1.5 text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] marker:hidden">
-            Menu
-            <span className="grid gap-[3px]">
-              <span className="h-px w-3 bg-black" />
-              <span className="h-px w-3 bg-black" />
-            </span>
-          </summary>
-          <div className="absolute right-0 top-[31px] grid min-w-[170px] gap-3 border border-black/10 bg-white p-4 text-[14px] font-semibold leading-none shadow-sm">
-            {navItems.map((link) => (
-              <Link key={link.label} href={link.href} className="hover:opacity-60">
-                {link.label}
-              </Link>
-            ))}
-            <Link href="/contact" className="hover:opacity-60">
-              Contact
-            </Link>
-          </div>
-        </details>
+        <MobileNav active={active} />
       </Container>
     </header>
   );
@@ -115,9 +98,9 @@ export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
           <FooterList
             title="Get in touch"
             items={[
-              { label: "hello.humaneframes@gmail.com", href: "mailto:hello.humaneframes@gmail.com" },
-              { label: "+91 90745 55835", href: "tel:+919074555835" },
-              { label: "+91 81380 08357", href: "tel:+918138008357" },
+              { label: "hello.humaneframes@gmail.com", href: "mailto:hello@kalme.com" },
+              { label: "+91 90745 55835", href: "tel:+91 9074555835" },
+              { label: "+91 81380 08357", href: "tel:+91 81380 08357" },
             ]}
           />
           <FooterList

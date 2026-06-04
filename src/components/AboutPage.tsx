@@ -130,7 +130,7 @@ function Values() {
   return (
     <section className="pt-[190px]">
       <Container>
-        <div className="mb-16 grid gap-10 lg:grid-cols-[minmax(0,430px)_1fr_minmax(0,325px)] lg:items-end">
+        <div className="mb-14 grid gap-8 md:grid-cols-[minmax(0,430px)_minmax(0,325px)] md:items-end md:justify-between lg:mb-16">
           <div>
             <Kicker>Our Values</Kicker>
             <h2 className="max-w-[430px] text-[clamp(42px,5vw,58px)] font-semibold leading-[1.02] tracking-[-0.07em]">
@@ -139,26 +139,20 @@ function Values() {
               drive real results
             </h2>
           </div>
-          <div />
           <p className="max-w-[325px] justify-self-end text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black/70">
             Our core values guide every decision, shaping how we work to deliver strong results and
             lasting partnerships.
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,440px)_minmax(0,440px)_minmax(0,440px)] lg:justify-between">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,440px)_minmax(0,900px)] lg:items-stretch lg:justify-between">
           <ImageCard
             src="/images/about/PWfvFMTAX9QxuNdLqTee3TBu4Js.jpg"
             alt="Team planning strategy on wall"
-            className="min-h-[700px] grayscale lg:min-h-0"
+            className="h-[285px] grayscale sm:h-[360px] md:h-[405px] lg:h-auto lg:min-h-[700px]"
           />
-          <div className="grid gap-5">
-            {values.filter((_, index) => index % 2 === 0).map((value) => (
-              <ValueCard key={value.number} {...value} />
-            ))}
-          </div>
-          <div className="grid gap-5">
-            {values.filter((_, index) => index % 2 === 1).map((value) => (
+          <div className="grid gap-5 md:grid-cols-2">
+            {values.map((value) => (
               <ValueCard key={value.number} {...value} />
             ))}
           </div>
@@ -170,14 +164,14 @@ function Values() {
 
 function ValueCard({ number, title, body }: { number: string; title: string; body: string }) {
   return (
-    <article className="flex min-h-[335px] flex-col justify-between bg-white p-8">
-      <p className="text-[40px] font-semibold leading-none tracking-[-0.065em]">
+    <article className="flex min-h-[210px] flex-col justify-between bg-white p-6 md:min-h-[245px] lg:min-h-[340px] lg:p-8">
+      <p className="text-[30px] font-semibold leading-none tracking-[-0.065em] lg:text-[40px]">
         {number}
-        <span className="ml-2 text-[22px] tracking-[-0.05em] text-black/70">/04</span>
+        <span className="ml-2 text-[16px] tracking-[-0.05em] text-black/70 lg:text-[22px]">/04</span>
       </p>
       <div>
-        <h3 className="mb-3 text-[21px] font-bold leading-[1.05] tracking-[-0.055em]">{title}</h3>
-        <p className="text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black/72">{body}</p>
+        <h3 className="mb-3 text-[17px] font-bold leading-[1.05] tracking-[-0.055em] lg:text-[21px]">{title}</h3>
+        <p className="text-[14px] font-medium leading-[1.4] tracking-[-0.03em] text-black/72 lg:text-[16px]">{body}</p>
       </div>
     </article>
   );

@@ -59,7 +59,7 @@ a {
 }
 
 .showreel-frame {
-  animation: hf-showreel-fade 7.2s infinite;
+  animation: hf-showreel-fade 12s infinite;
   opacity: 0;
 }
 

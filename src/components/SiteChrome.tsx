@@ -67,25 +67,48 @@ export function SiteNav({ active }: { active?: string }) {
 
 export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
   return (
-    <footer className={`${largeGap ? "mt-[520px]" : "mt-28"} pb-12 pt-24`}>
+    <footer className={`${largeGap ? "mt-[520px]" : ""} pb-[50px] pt-[100px]`}>
       <Container>
         <div className="relative h-[75px] w-[300px] max-md:h-[39px] max-md:w-[156px]">
           <Image src="/assets/framer/humaneframes-logo.png" alt="Humaneframes" fill sizes="300px" className="object-contain" />
         </div>
 
-        <div className="mt-[100px] grid gap-12 border-t border-black/10 pt-10 lg:grid-cols-[1.35fr_0.55fr_0.8fr_0.5fr]">
+        <div className="mt-[100px] grid gap-12 border-t border-black/10 pt-[40px] lg:grid-cols-[1.35fr_0.55fr_0.8fr_0.5fr]">
           <div className="max-w-[335px]">
-            <p className="text-[12px] font-medium leading-[1.25] text-black/75">{footerCopy}</p>
-            <div className="mt-6">
+            <p className="text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black">{footerCopy}</p>
+            <div className="mt-[30px]">
               <Pill href="/contact">Schedule a call</Pill>
             </div>
           </div>
-          <FooterList title="Quick links" items={["Home", "Services", "Projects", "About", "Contact"]} />
-          <FooterList title="Get in touch" items={["hello.humaneframes@gmail.com", "+91 90745 55835", "+91 81380 08357"]} />
-          <FooterList title="Follow us" items={["LinkedIn", "Instagram", "Facebook"]} />
+          <FooterList
+            title="Quick links"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: "Projects", href: "/projects" },
+              { label: "About", href: "/about" },
+              { label: "Contact", href: "/contact" },
+            ]}
+          />
+          <FooterList
+            title="Get in touch"
+            items={[
+              { label: "hello.humaneframes@gmail.com", href: "mailto:hello.humaneframes@gmail.com" },
+              { label: "+91 90745 55835", href: "tel:+919074555835" },
+              { label: "+91 81380 08357", href: "tel:+918138008357" },
+            ]}
+          />
+          <FooterList
+            title="Follow us"
+            items={[
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/humaneframes" },
+              { label: "Instagram", href: "https://www.instagram.com/humaneframes" },
+              { label: "Facebook", href: "https://www.facebook.com/humaneframes" },
+            ]}
+          />
         </div>
 
-        <div className="mt-24 flex flex-col gap-5 border-t border-black/10 pt-10 text-[13px] font-medium leading-none text-black/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-[100px] flex flex-col gap-5 border-t border-black/10 pt-[40px] text-[13px] font-medium leading-none text-black sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; 2026 Humaneframes. All rights reserved.</p>
           <p>
             <Link href="/legal/terms-of-service">Terms of Service</Link>
@@ -98,13 +121,17 @@ export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
   );
 }
 
-function FooterList({ title, items }: { title: string; items: string[] }) {
+function FooterList({ title, items }: { title: string; items: { label: string; href: string }[] }) {
   return (
     <div>
-      <p className="mb-5 text-[11px] leading-none text-black/55">{title}</p>
-      <ul className="space-y-2 text-[11px] font-semibold leading-[1.08] text-black/80">
+      <p className="mb-[20px] text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">{title}</p>
+      <ul className="space-y-[10px] text-[16px] font-medium leading-[1.2] tracking-[-0.02em] text-black">
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item.label}>
+            <Link href={item.href} className="hover:opacity-60">
+              {item.label}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

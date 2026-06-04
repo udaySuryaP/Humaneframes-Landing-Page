@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SiteNav } from "@/components/SiteChrome";
+import { SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 const values = [
   {
@@ -24,9 +24,6 @@ const values = [
     body: "We value people as much as the work. Creativity thrives when there's room to breathe, reflect, and recharge.",
   },
 ];
-
-const quickLinks = ["Home", "Services", "Projects", "About", "Contact"];
-const socials = ["LinkedIn", "Instagram", "Facebook"];
 
 function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
@@ -203,63 +200,6 @@ function ValueCard({ number, title, body }: { number: string; title: string; bod
   );
 }
 
-function Footer() {
-  return (
-    <footer className="mt-[760px] border-t border-black/10 pb-12 pt-28">
-      <Container>
-        <Image
-          src="/assets/framer/humaneframes-logo.png"
-          alt="Humaneframes."
-          width={300}
-          height={75}
-          className="h-[75px] w-[300px] object-contain"
-        />
-
-        <div className="mt-16 grid gap-12 border-t border-black/10 pt-12 lg:grid-cols-[1.6fr_0.55fr_0.8fr_0.45fr]">
-          <div className="max-w-[335px]">
-            <p className="text-[13px] font-medium leading-[1.2] tracking-[-0.04em]">
-              A trusted Kerala based digital marketing and social media company delivering creative
-              strategies and measurable results.
-            </p>
-            <div className="mt-6">
-              <Pill href="/#contact">Schedule a call</Pill>
-            </div>
-          </div>
-          <div>
-            <p className="mb-5 text-[12px] leading-none text-black/55">Quick links</p>
-            <ul className="space-y-2 text-[12px] font-medium leading-none tracking-[-0.035em]">
-              {quickLinks.map((link) => (
-                <li key={link}>{link}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="mb-5 text-[12px] leading-none text-black/55">Get in touch</p>
-            <ul className="space-y-2 text-[12px] font-medium leading-none tracking-[-0.035em]">
-              <li>hello.humaneframes@gmail.com</li>
-              <li>+91 90745 55835</li>
-              <li>+91 81380 08357</li>
-            </ul>
-          </div>
-          <div>
-            <p className="mb-5 text-[12px] leading-none text-black/55">Follow us</p>
-            <ul className="space-y-2 text-[12px] font-medium leading-none tracking-[-0.035em]">
-              {socials.map((social) => (
-                <li key={social}>{social}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-32 flex flex-col gap-5 border-t border-black/10 pt-10 text-[11px] font-medium leading-none tracking-[-0.03em] sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; 2026 Humaneframes. All rights reserved.</p>
-          <p>Terms of Service&nbsp;&nbsp;&nbsp; Privacy Policy</p>
-        </div>
-      </Container>
-    </footer>
-  );
-}
-
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
@@ -267,7 +207,7 @@ export default function AboutPage() {
       <Hero />
       <Bento />
       <Values />
-      <Footer />
+      <SiteFooter largeGap={false} />
     </main>
   );
 }

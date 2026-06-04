@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { SiteNav } from "@/components/SiteChrome";
+import { SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 const services = [
   {
@@ -177,7 +177,7 @@ function HeroShowreel() {
             priority={index === 0}
             sizes="300px"
             className="showreel-frame object-cover"
-            style={{ animationDelay: `${index * 2.4}s` }}
+            style={{ animationDelay: `${index * 4}s` }}
           />
         ))}
       </div>
@@ -394,52 +394,6 @@ function CTA() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="pb-[50px] pt-[100px]">
-      <Container>
-        <div className="relative h-[75px] w-[300px] max-md:h-[39px] max-md:w-[156px]">
-          <Image src="/assets/framer/humaneframes-logo.png" alt="Humaneframes" fill sizes="300px" className="object-contain" />
-        </div>
-        <div className="mt-[100px] grid gap-12 border-t border-black/10 pt-[40px] md:grid-cols-[1.35fr_0.55fr_0.8fr_0.5fr]">
-          <div className="max-w-[330px]">
-            <p className="text-[16px] font-medium leading-[1.4] text-black">
-              A trusted Kerala based digital marketing and social media company delivering creative strategies and measurable results.
-            </p>
-            <div className="mt-[30px]">
-              <Pill href="/contact">Schedule a call</Pill>
-            </div>
-          </div>
-          <FooterList title="Quick links" items={["Home", "Services", "Projects", "About", "Contact"]} />
-          <FooterList title="Get in touch" items={["hello.humaneframes@gmail.com", "+91 90745 55835", "+91 81380 08357"]} />
-          <FooterList title="Follow us" items={["LinkedIn", "Instagram", "Facebook"]} />
-        </div>
-        <div className="mt-[100px] flex flex-col gap-5 border-t border-black/10 pt-[40px] text-[13px] font-medium leading-none text-black sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; 2026 Humaneframes. All rights reserved.</p>
-          <p>
-            <Link href="/legal/terms-of-service">Terms of Service</Link>
-            <span className="mx-3" />
-            <Link href="/legal/privacy-policy">Privacy Policy</Link>
-          </p>
-        </div>
-      </Container>
-    </footer>
-  );
-}
-
-function FooterList({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <p className="mb-[20px] text-[13px] font-medium leading-none text-[#4f4f4f]">{title}</p>
-      <ul className="space-y-[10px] text-[13px] font-semibold leading-[1.2] text-black">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export default function HumaneframesLanding() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] text-black">
@@ -450,7 +404,7 @@ export default function HumaneframesLanding() {
       <Services />
       <Work />
       <CTA />
-      <Footer />
+      <SiteFooter largeGap={false} />
     </main>
   );
 }

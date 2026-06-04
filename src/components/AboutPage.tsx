@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { SiteFooter, SiteNav } from "@/components/SiteChrome";
+import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 const values = [
   {
@@ -25,22 +24,6 @@ const values = [
   },
 ];
 
-function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
-}
-
-function Pill({ children, href = "/#contact" }: { children: React.ReactNode; href?: string }) {
-  return (
-    <Link
-      href={href}
-      className="inline-flex h-[39px] items-center gap-2 rounded-full bg-black px-4 text-[16px] font-medium leading-[1.2] text-white transition-transform duration-300 hover:scale-[0.98]"
-    >
-      {children}
-      <span className="h-1 w-1 rounded-full bg-[#fd2400]" />
-    </Link>
-  );
-}
-
 function Kicker({ children }: { children: React.ReactNode }) {
   return (
     <p className="mb-[10px] text-[14px] font-semibold uppercase leading-[1.4] text-[#4f4f4f]">
@@ -55,17 +38,17 @@ function Hero() {
   return (
     <section className="pt-[190px]">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[1fr_2.05fr]">
+        <div className="grid gap-14 lg:grid-cols-[minmax(220px,426px)_minmax(0,735px)] lg:justify-between">
           <div>
             <h1 className="text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">About</h1>
-            <p className="mt-16 max-w-[130px] text-[13px] leading-[1.18] tracking-[-0.035em] text-black/70">
+            <p className="mt-16 max-w-[170px] text-[16px] font-medium leading-[1.35] tracking-[-0.03em] text-black/70">
               Where strategy
               <br />
               meets growth
             </p>
           </div>
-          <div className="max-w-[735px] justify-self-start lg:pt-[116px]">
-            <p className="text-[clamp(19px,2.2vw,25px)] font-semibold leading-[1.06] tracking-[-0.055em] text-black/78">
+          <div className="max-w-[735px] justify-self-end lg:pt-[116px]">
+            <p className="text-[clamp(20px,1.8vw,25px)] font-semibold leading-[1.16] tracking-[-0.045em] text-black/78">
               We do more than market; we create meaningful digital experiences that build stronger
               brands and drive measurable growth. Based in Kerala, Humaneframes combines strategy,
               design, and technology to help businesses stand out and scale with confidence.
@@ -103,7 +86,7 @@ function Bento() {
   return (
     <section className="pt-[120px]">
       <Container>
-        <div className="grid gap-5 lg:grid-cols-[1.45fr_0.95fr_0.95fr] lg:grid-rows-[340px_340px]">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,578px)_minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-[340px_340px]">
           <ImageCard
             src="/images/about/sxgSA7cXJI7Dz9f0EEMmC2mUl6M.jpg"
             alt="Camera operator filming in studio"
@@ -124,7 +107,7 @@ function Bento() {
               Empowering Brands with Digital Excellence
             </h3>
             <p className="mt-24 text-[68px] font-semibold leading-none tracking-[-0.065em]">40%</p>
-            <p className="mt-3 max-w-[220px] text-[12px] leading-[1.18] tracking-[-0.035em] text-black/65">
+            <p className="mt-3 max-w-[240px] text-[16px] font-medium leading-[1.35] tracking-[-0.03em] text-black/65">
               average increase in client engagement within 3 months
             </p>
           </div>
@@ -147,7 +130,7 @@ function Values() {
   return (
     <section className="pt-[190px]">
       <Container>
-        <div className="mb-16 grid gap-10 lg:grid-cols-[1.05fr_0.95fr_0.95fr]">
+        <div className="mb-16 grid gap-10 lg:grid-cols-[minmax(0,430px)_1fr_minmax(0,325px)] lg:items-end">
           <div>
             <Kicker>Our Values</Kicker>
             <h2 className="max-w-[430px] text-[clamp(42px,5vw,58px)] font-semibold leading-[1.02] tracking-[-0.07em]">
@@ -157,13 +140,13 @@ function Values() {
             </h2>
           </div>
           <div />
-          <p className="max-w-[325px] self-end text-[13px] leading-[1.22] tracking-[-0.035em] text-black/70">
+          <p className="max-w-[325px] justify-self-end text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black/70">
             Our core values guide every decision, shaping how we work to deliver strong results and
             lasting partnerships.
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr]">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,440px)_minmax(0,440px)_minmax(0,440px)] lg:justify-between">
           <ImageCard
             src="/images/about/PWfvFMTAX9QxuNdLqTee3TBu4Js.jpg"
             alt="Team planning strategy on wall"
@@ -194,7 +177,7 @@ function ValueCard({ number, title, body }: { number: string; title: string; bod
       </p>
       <div>
         <h3 className="mb-3 text-[21px] font-bold leading-[1.05] tracking-[-0.055em]">{title}</h3>
-        <p className="text-[13px] leading-[1.22] tracking-[-0.035em] text-black/72">{body}</p>
+        <p className="text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black/72">{body}</p>
       </div>
     </article>
   );

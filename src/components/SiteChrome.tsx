@@ -3,7 +3,11 @@ import Image from "next/image";
 import { footerCopy, navItems } from "@/lib/site-content";
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
+  return (
+    <div className={`mx-auto w-[calc(100%-30px)] max-w-[1440px] md:w-[calc(100%-40px)] xl:w-[calc(100%-60px)] ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 export function Pill({
@@ -18,10 +22,10 @@ export function Pill({
   return (
     <Link
       href={href}
-      className={`group inline-flex h-[39px] items-center gap-2 overflow-hidden rounded-full px-4 text-[16px] font-medium leading-[1.2] transition-transform duration-300 hover:scale-[0.98] ${
+      className={`group inline-flex h-[39px] shrink-0 items-center gap-2 overflow-hidden rounded-full px-4 text-[16px] font-medium leading-[1.2] tracking-[-0.02em] transition-all duration-300 hover:scale-[0.98] ${
         variant === "dark"
-          ? "bg-black text-white"
-          : "border border-black/20 bg-transparent text-black"
+          ? "bg-black text-white hover:bg-black/75"
+          : "border border-black/20 bg-transparent text-black hover:border-black"
       }`}
     >
       {children}

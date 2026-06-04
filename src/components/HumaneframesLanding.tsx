@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { SiteFooter, SiteNav } from "@/components/SiteChrome";
+import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 const services = [
   {
     number: "01",
+    slug: "brand-design",
     title: "Brand Design",
     overview:
       "We build the complete foundation of your brand, from the visual identity people see to the strategy that drives its growth. Every element is designed to be distinct, consistent, and built to scale with your business.",
@@ -16,6 +17,7 @@ const services = [
   },
   {
     number: "02",
+    slug: "ui-ux-design",
     title: "UI/UX Design",
     overview:
       "We research, design, and prototype digital interfaces that make sense from the first interaction and support the way people actually move through your product.",
@@ -23,6 +25,7 @@ const services = [
   },
   {
     number: "03",
+    slug: "web-and-app-development",
     title: "Web and App Development",
     overview:
       "We build websites and applications that load fast, look sharp, and convert visitors into customers while staying easy for your team to grow.",
@@ -30,6 +33,7 @@ const services = [
   },
   {
     number: "04",
+    slug: "content-and-storytelling",
     title: "Content and Storytelling",
     overview:
       "We find the story at the centre of your brand and build content that connects with your audience, communicates clearly, and drives action.",
@@ -37,6 +41,7 @@ const services = [
   },
   {
     number: "05",
+    slug: "ads-and-growth",
     title: "Ads and Growth",
     overview:
       "We plan, launch, and optimise paid campaigns that put your brand in front of the right people at the right time, with every rupee tracked and tested.",
@@ -82,34 +87,6 @@ const ctaImages = [
   "/images/current-site/OslGeYkhcn7grxI5MyYovBUtyE.jpg",
   "/images/current-site/PkSKDiO6ZIzVgbahlsXNxmUHJ0.jpg",
 ];
-
-function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full px-[30px] max-md:px-[15px] ${className}`}>{children}</div>;
-}
-
-function Pill({
-  children,
-  href = "/contact",
-  variant = "dark",
-}: {
-  children: React.ReactNode;
-  href?: string;
-  variant?: "dark" | "light";
-}) {
-  return (
-    <Link
-      href={href}
-      className={`group inline-flex h-[39px] shrink-0 items-center gap-2 overflow-hidden rounded-full px-4 text-[16px] font-medium leading-[1.2] transition-transform duration-300 hover:scale-[0.98] ${
-        variant === "dark"
-          ? "bg-black text-white hover:bg-black/75"
-          : "border border-black/25 bg-transparent text-black hover:border-black"
-      }`}
-    >
-      <span>{children}</span>
-      {variant === "dark" && <span className="h-1.5 w-1.5 rounded-full bg-[#fd2400]" />}
-    </Link>
-  );
-}
 
 function SectionKicker({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
@@ -192,7 +169,7 @@ function HeroShowreel() {
 
 function PageVideo() {
   return (
-    <section className="relative h-[500px] overflow-hidden bg-neutral-200 md:h-[738px]">
+    <Container className="relative h-[500px] overflow-hidden bg-neutral-200 md:h-[738px]">
       <video
         className="h-full w-full object-cover"
         src="/assets/framer/hero-showreel.mp4"
@@ -202,7 +179,7 @@ function PageVideo() {
         playsInline
         preload="metadata"
       />
-    </section>
+    </Container>
   );
 }
 
@@ -214,8 +191,8 @@ function Intro() {
         <h2 className="max-w-[1205px] text-[clamp(36px,4.27vw,54px)] font-semibold leading-[1.2]">
           We combine creativity, data-driven strategies, and authentic storytelling to connect your brand with the right audience and drive measurable business results.
         </h2>
-        <div className="mt-[50px] grid gap-[50px] lg:grid-cols-[578px_1fr] lg:items-end">
-          <div className="relative h-[320px] overflow-hidden bg-neutral-200 md:h-[385px]">
+        <div className="mt-[50px] grid gap-[50px] lg:grid-cols-[minmax(0,578px)_minmax(360px,578px)] lg:items-end lg:justify-between">
+          <div className="relative h-[320px] w-full overflow-hidden bg-neutral-200 md:h-[385px]">
             <Image
               src="/images/current-site/3B9h8AV1jrN4BPLKUhldIYfIUrw.jpg"
               alt="Red lit editorial portrait"
@@ -224,8 +201,8 @@ function Intro() {
               className="object-cover"
             />
           </div>
-          <div className="max-w-[578px] pb-0">
-            <p className="text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">
+          <div className="w-full max-w-[578px] justify-self-end pb-0">
+            <p className="text-[18px] font-medium leading-[1.45] tracking-[-0.03em] text-[#4f4f4f]">
               Humaneframes is a brand and digital experience company based in Kerala, built for founders and businesses seeking more than just a vendor. We unite strategy, design, and technology into one integrated system that builds your brand holistically, not in fragmented pieces. Every decision we make is guided by one outcome: measurable business growth.
             </p>
             <div className="mt-[30px]">
@@ -233,11 +210,11 @@ function Intro() {
             </div>
           </div>
         </div>
-        <div className="mt-[50px] grid grid-cols-2 gap-px bg-[#efefed] md:grid-cols-4">
+        <div className="mt-[50px] grid max-w-[1060px] grid-cols-2 gap-[10px] md:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.value} className="bg-white px-[30px] py-[30px]">
-              <p className="text-[clamp(48px,5.7vw,72px)] font-bold leading-[1.2]">{stat.value}</p>
-              <p className="text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">{stat.label}</p>
+            <div key={stat.value} className="bg-white px-[24px] py-[28px]">
+              <p className="text-[clamp(44px,4.8vw,64px)] font-semibold leading-[1.05] tracking-[-0.03em]">{stat.value}</p>
+              <p className="mt-[12px] text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -289,12 +266,12 @@ function Services() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="grid gap-[100px] px-[30px] pb-[40px] md:grid-cols-[423px_423px] md:pl-[230px]"
+                    className="grid gap-[35px] px-[30px] pb-[40px] xl:grid-cols-[423px_423px] xl:gap-[100px] xl:pl-[230px]"
                   >
                     <div>
                       <p className="mb-[15px] text-[18px] font-medium leading-[1.4]">What we do</p>
                       <p className="text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">{service.overview}</p>
-                      <Link href="/services/brand-design" className="mt-[65px] inline-flex items-center gap-1 text-[16px] font-medium leading-[1.2]">
+                      <Link href={`/services/${service.slug}`} className="mt-[65px] inline-flex items-center gap-1 text-[16px] font-medium leading-[1.2]">
                         More details <span className="grid h-4 w-4 place-items-center rounded-full bg-black text-[10px] text-white">+</span>
                       </Link>
                     </div>
@@ -333,7 +310,7 @@ function Work() {
             Our work combines creativity, strategy, and data to deliver digital marketing solutions that drive real growth and meaningful connections.
           </p>
         </div>
-        <div className="grid gap-[20px] md:grid-cols-[repeat(2,minmax(0,593px))]">
+        <div className="mx-auto grid max-w-[1206px] gap-[20px] md:grid-cols-2">
           {works.map((work) => (
             <article key={work.title} className="bg-white">
               <div className="relative h-[300px] overflow-hidden bg-neutral-200 md:h-[395px]">

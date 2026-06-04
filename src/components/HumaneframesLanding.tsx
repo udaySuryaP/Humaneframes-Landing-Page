@@ -210,11 +210,11 @@ function Intro() {
             </div>
           </div>
         </div>
-        <div className="mt-[50px] grid max-w-[1060px] grid-cols-2 gap-[10px] md:grid-cols-4">
+        <div className="mt-[50px] grid grid-cols-1 gap-[10px] min-[560px]:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.value} className="bg-white px-[24px] py-[28px]">
-              <p className="text-[clamp(44px,4.8vw,64px)] font-semibold leading-[1.05] tracking-[-0.03em]">{stat.value}</p>
-              <p className="mt-[12px] text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">{stat.label}</p>
+            <div key={stat.value} className="min-h-[150px] bg-white px-[30px] py-[30px] min-[560px]:min-h-[145px] lg:min-h-[169px]">
+              <p className="text-[40px] font-semibold leading-[1.05] tracking-[-0.03em] min-[560px]:text-[56px] lg:text-[72px] lg:leading-[1.2]">{stat.value}</p>
+              <p className="mt-[4px] text-[12px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f] min-[560px]:mt-[8px] min-[560px]:text-[16px] lg:mt-0">{stat.label}</p>
             </div>
           ))}
         </div>

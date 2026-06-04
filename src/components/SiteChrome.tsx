@@ -3,7 +3,11 @@ import Image from "next/image";
 import { footerCopy, navItems } from "@/lib/site-content";
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`hf-container ${className}`}>{children}</div>;
+  return (
+    <div className={`mx-auto w-[calc(100%-30px)] max-w-[1440px] md:w-[calc(100%-40px)] xl:w-[calc(100%-60px)] ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 export function Pill({

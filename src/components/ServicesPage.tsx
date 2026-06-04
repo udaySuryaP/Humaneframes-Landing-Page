@@ -3,7 +3,7 @@ import Link from "next/link";
 import { serviceCards } from "@/lib/site-content";
 import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 
-const publishedServices = serviceCards;
+const publishedServices = serviceCards.slice(0, 4);
 
 export default function ServicesPage() {
   return (
@@ -36,14 +36,14 @@ export default function ServicesPage() {
 
       <section>
         <Container>
-          <div className="space-y-[24px] md:-mr-[24px]">
+          <div className="space-y-[24px] md:-mr-[9px]">
             {publishedServices.map((service, index) => (
               <article
                 key={service.slug}
-                className={`grid bg-white max-md:mx-[-9px] md:h-[559px] ${
+                className={`grid bg-white max-md:mx-[-9px] md:min-h-[559px] ${
                   index % 2 === 0
-                    ? "md:grid-cols-[28.5fr_71.5fr]"
-                    : "md:-ml-[21px] md:mr-[30px] md:grid-cols-[71.5fr_28.5fr]"
+                    ? "md:grid-cols-[351px_minmax(0,1fr)]"
+                    : "md:-ml-[21px] md:mr-[30px] md:grid-cols-[minmax(0,1fr)_351px]"
                 }`}
               >
                 <ServiceText service={service} className={`max-md:order-2 ${index % 2 === 1 ? "md:order-2" : ""}`} />
@@ -60,7 +60,7 @@ export default function ServicesPage() {
 
 function ServiceText({ service, className = "" }: { service: (typeof serviceCards)[number]; className?: string }) {
   return (
-    <div className={`min-h-[512px] overflow-hidden px-[29px] py-[43px] max-md:mx-[9px] max-md:min-h-0 max-md:px-5 max-md:pb-[62px] max-md:pt-[20px] md:h-[559px] ${className}`}>
+    <div className={`min-h-[512px] px-[29px] py-[43px] max-md:mx-[9px] max-md:min-h-0 max-md:px-5 max-md:pb-[62px] max-md:pt-[20px] md:min-h-[559px] ${className}`}>
       <h2 className="text-[24px] font-semibold leading-[1.2] tracking-[-0.03em] md:mt-[2px]">{service.title}</h2>
       <p className="mt-[18px] max-w-[302px] text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">
         {service.description}
@@ -74,7 +74,7 @@ function ServiceText({ service, className = "" }: { service: (typeof serviceCard
           </li>
         ))}
       </ul>
-      <Link href={`/services/${service.slug}`} className="mt-[30px] inline-flex items-center gap-1 text-[16px] font-medium leading-[1.2] tracking-[-0.02em]">
+      <Link href={`/services/${service.slug}`} className="mt-[46px] inline-flex items-center gap-1 text-[16px] font-medium leading-[1.2] tracking-[-0.02em]">
         More details <span className="grid h-4 w-4 place-items-center rounded-full bg-black text-[10px] text-white">+</span>
       </Link>
     </div>

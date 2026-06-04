@@ -169,7 +169,7 @@ function HeroShowreel() {
 
 function PageVideo() {
   return (
-    <section className="relative -mt-[109px] h-[576px] overflow-hidden bg-neutral-200 md:h-[66.2vw] md:max-h-[949px] md:min-h-[837px]">
+    <Container className="relative h-[500px] overflow-hidden bg-neutral-200 md:h-[738px]">
       <video
         className="h-full w-full object-cover"
         src="/assets/framer/hero-showreel.mp4"
@@ -179,7 +179,7 @@ function PageVideo() {
         playsInline
         preload="metadata"
       />
-    </section>
+    </Container>
   );
 }
 
@@ -210,11 +210,11 @@ function Intro() {
             </div>
           </div>
         </div>
-        <div className="mt-[50px] grid grid-cols-2 gap-[10px] md:grid-cols-4">
+        <div className="mt-[50px] grid max-w-[1060px] grid-cols-2 gap-[10px] md:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.value} className="min-h-[145px] bg-white px-[30px] py-[30px] md:min-h-[169px]">
-              <p className="text-[56px] font-semibold leading-[1.2] tracking-[-0.03em] md:text-[72px]">{stat.value}</p>
-              <p className="text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">{stat.label}</p>
+            <div key={stat.value} className="bg-white px-[24px] py-[28px]">
+              <p className="text-[clamp(44px,4.8vw,64px)] font-semibold leading-[1.05] tracking-[-0.03em]">{stat.value}</p>
+              <p className="mt-[12px] text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f]">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -310,13 +310,13 @@ function Work() {
             Our work combines creativity, strategy, and data to deliver digital marketing solutions that drive real growth and meaningful connections.
           </p>
         </div>
-        <div className="grid gap-[20px] md:grid-cols-2">
+        <div className="mx-auto grid max-w-[1206px] gap-[20px] md:grid-cols-2">
           {works.map((work) => (
             <article key={work.title} className="bg-white">
-              <div className="relative aspect-[3/2] overflow-hidden bg-neutral-200">
+              <div className="relative h-[300px] overflow-hidden bg-neutral-200 md:h-[395px]">
                 <Image src={work.image} alt={work.title} fill sizes="(max-width: 768px) 100vw, 593px" className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
               </div>
-              <div className="grid min-h-[146px] grid-cols-[1fr_18px] gap-4 px-[20px] py-[20px]">
+              <div className="grid min-h-[96px] grid-cols-[1fr_18px] gap-4 px-[20px] py-[20px]">
                 <div>
                   <p className="mb-[10px] text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">{work.year}</p>
                   <h3 className="text-[18px] font-semibold leading-[1.4]">{work.title}</h3>

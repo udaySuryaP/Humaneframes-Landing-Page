@@ -38,12 +38,12 @@ export default function ContactPage() {
 
       <section className="pt-[92px]">
         <Container>
-          <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="grid gap-px bg-black/5">
+          <div className="grid min-w-0 gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="grid min-w-0 gap-px bg-black/5">
               {details.map(([title, ...lines]) => (
-                <div key={title} className="bg-white p-8">
+                <div key={title} className="min-w-0 bg-white p-5 md:p-8">
                   <p className="mb-6 text-[12px] leading-none text-black/55">{title}</p>
-                  <div className="space-y-2 text-[20px] font-semibold leading-[1.05] tracking-[-0.055em]">
+                  <div className="min-w-0 space-y-2 break-words text-[17px] font-semibold leading-[1.08] tracking-[-0.055em] md:text-[20px]">
                     {lines.map((line) => (
                       <p key={line}>{line}</p>
                     ))}
@@ -51,15 +51,15 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
-            <form className="grid gap-px bg-black/5">
+            <form className="grid min-w-0 gap-px bg-black/5">
               <Field label="Name" />
               <Field label="Email" />
               <Field label="Phone" />
-              <label className="bg-white p-8">
+              <label className="min-w-0 bg-white p-5 md:p-8">
                 <span className="mb-5 block text-[12px] leading-none text-black/55">Message</span>
-                <textarea className="h-44 w-full resize-none bg-transparent text-[18px] outline-none" />
+                <textarea className="h-44 min-w-0 w-full resize-none bg-transparent text-[18px] outline-none" />
               </label>
-              <div className="bg-white p-8">
+              <div className="min-w-0 bg-white p-5 md:p-8">
                 <button type="button" className="inline-flex h-[39px] items-center gap-2 rounded-full bg-black px-4 text-[16px] font-medium leading-[1.2] text-white">
                   Submit message
                   <span className="h-1.5 w-1.5 rounded-full bg-[#fd2400]" />
@@ -76,9 +76,9 @@ export default function ContactPage() {
 
 function Field({ label }: { label: string }) {
   return (
-    <label className="bg-white p-8">
+    <label className="min-w-0 bg-white p-5 md:p-8">
       <span className="mb-5 block text-[12px] leading-none text-black/55">{label}</span>
-      <input className="w-full bg-transparent text-[18px] outline-none" />
+      <input className="min-w-0 w-full bg-transparent text-[18px] outline-none" />
     </label>
   );
 }

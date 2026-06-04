@@ -340,7 +340,7 @@ function CTA() {
   const marquee = [...ctaImages, ...ctaImages, ...ctaImages];
 
   return (
-    <section id="contact" className="py-[100px]">
+    <section id="contact" className="overflow-hidden py-[100px]">
       <Container>
         <div className="mx-auto max-w-[550px] text-center">
           <SectionKicker className="mb-[10px]">Your future, together</SectionKicker>
@@ -358,7 +358,7 @@ function CTA() {
           </div>
         </div>
       </Container>
-      <div className="mt-[50px] overflow-hidden">
+      <div className="mt-[50px] max-w-full overflow-hidden">
         <div className="hf-marquee flex w-max gap-[20px]">
           {marquee.map((image, index) => (
             <div key={`${image}-${index}`} className="relative h-[280px] w-[280px] shrink-0 overflow-hidden bg-neutral-200 md:h-[400px] md:w-[400px]">

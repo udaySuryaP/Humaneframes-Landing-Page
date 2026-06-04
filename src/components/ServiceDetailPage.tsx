@@ -43,7 +43,7 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
                 ))}
               </div>
             </div>
-            <aside className="bg-white px-[16px] py-[16px] md:max-w-[350px] md:px-[22px] md:py-[24px] lg:min-h-[420px] lg:px-[30px] lg:py-[28px]">
+            <aside className="bg-white px-[16px] py-[16px] md:w-full md:max-w-[350px] md:justify-self-end md:px-[22px] md:py-[24px] lg:min-h-[420px] lg:px-[30px] lg:py-[28px]">
               <h2 className="text-[12px] font-semibold leading-[1.2] tracking-[-0.03em] md:text-[18px] lg:text-[20px]">{service.title} Package</h2>
               <h3 className="mt-[16px] text-[9px] font-medium leading-[1.35] tracking-[-0.03em] md:mt-[28px] md:text-[14px] lg:text-[16px]">What&apos;s include:</h3>
               <ul className="mt-[8px] space-y-[4px] text-[8px] font-medium leading-[1.25] tracking-[-0.03em] text-[#4f4f4f] md:mt-[12px] md:space-y-[8px] md:text-[13px] md:leading-[1.35] lg:text-[14px]">

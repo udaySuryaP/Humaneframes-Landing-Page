@@ -58,21 +58,25 @@ const stats = [
 
 const works = [
   {
+    slug: "imism-from-idea-to-full-brand-launch",
     year: "2026",
     title: "Imism from Idea to Full Brand Launch",
     image: "/images/current-site/5dPICNVskiIoFCUXZ8nPQsij8.png",
   },
   {
+    slug: "destrezzza-transforming-a-premium-brand-into-a-premium-experience",
     year: "2025",
     title: "Destrezzza Transforming a Premium Brand Into a Premium Experience",
     image: "/images/current-site/kfC4SyMtgSdc4B3CsWx102i4nrA.jpg",
   },
   {
+    slug: "turning-an-event-company-into-a-visible-regional-brand",
     year: "2025",
     title: "Turning an Event Company Into a Visible Regional Brand",
     image: "/images/current-site/NTLzKZsMLs4oDne9oxD7kotS2w8.jpg",
   },
   {
+    slug: "zero-to-fully-bookable-in-one-of-kerala-s-most-competitive-travel-markets",
     year: "2025",
     title: "Zero to Fully Bookable in One of Kerala's Most Competitive Travel Markets",
     image: "/images/current-site/A9aPeT9DeN0TtIN1lKVMP9wVzU8.jpg",
@@ -116,7 +120,7 @@ function Hero() {
                 </p>
                 <div className="mt-[30px] flex items-center gap-[10px]">
                   <Pill href="/contact">Start a project</Pill>
-                  <Pill href="#works" variant="light">
+                  <Pill href="/projects" variant="light">
                     Our Work
                   </Pill>
                 </div>
@@ -312,9 +316,16 @@ function Work() {
         </div>
         <div className="mx-auto grid max-w-[1206px] gap-[20px] md:grid-cols-2">
           {works.map((work) => (
-            <article key={work.title} className="bg-white">
+            <Link key={work.title} href={`/projects/${work.slug}`} className="group bg-white">
               <div className="relative h-[300px] overflow-hidden bg-neutral-200 md:h-[395px]">
-                <Image src={work.image} alt={work.title} fill sizes="(max-width: 768px) 100vw, 593px" className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  unoptimized={work.image.endsWith(".png")}
+                  sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1199px) calc((100vw - 40px - 20px) / 2), 593px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
               </div>
               <div className="grid min-h-[96px] grid-cols-[1fr_18px] gap-4 px-[20px] py-[20px]">
                 <div>
@@ -325,7 +336,7 @@ function Work() {
                   +
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         <div className="mt-[40px] text-center">
@@ -352,7 +363,7 @@ function CTA() {
           </p>
           <div className="mt-[30px] flex flex-wrap justify-center gap-[10px]">
             <Pill href="/contact">Start your project</Pill>
-            <Pill href="/contact" variant="light">
+            <Pill href="https://cal.com/humaneframes/30min" variant="light">
               Book free consultation
             </Pill>
           </div>
@@ -362,7 +373,7 @@ function CTA() {
         <div className="hf-marquee flex w-max gap-[20px]">
           {marquee.map((image, index) => (
             <div key={`${image}-${index}`} className="relative h-[280px] w-[280px] shrink-0 overflow-hidden bg-neutral-200 md:h-[400px] md:w-[400px]">
-              <Image src={image} alt="Humaneframes brand detail" fill sizes="400px" className="object-cover" />
+              <Image src={image} alt="Humaneframes brand detail" fill sizes="(max-width: 767px) 280px, 400px" className="object-cover" />
             </div>
           ))}
         </div>

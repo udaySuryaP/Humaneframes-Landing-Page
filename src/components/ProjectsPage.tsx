@@ -39,7 +39,8 @@ export default function ProjectsPage() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 650px"
+                    unoptimized={project.image.endsWith(".png")}
+                    sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1199px) calc(100vw - 40px), 680px"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

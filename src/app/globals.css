@@ -75,14 +75,10 @@ a {
 
 @keyframes hf-showreel-fade {
   0%,
-  8% {
-    opacity: 0;
-  }
-  14%,
-  33% {
+  30% {
     opacity: 1;
   }
-  42%,
+  38%,
   100% {
     opacity: 0;
   }

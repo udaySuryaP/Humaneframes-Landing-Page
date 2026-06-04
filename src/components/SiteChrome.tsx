@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { footerCopy, navItems } from "@/lib/site-content";
 
+const bookingHref = "https://cal.com/humaneframes/30min";
+
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`mx-auto w-[calc(100%-30px)] max-w-[1440px] md:w-[calc(100%-40px)] xl:w-[calc(100%-60px)] ${className}`}>
@@ -61,9 +63,25 @@ export function SiteNav({ active }: { active?: string }) {
         <div className="hidden md:block">
           <Pill href="/contact">Contact us</Pill>
         </div>
-        <Link href="/contact" className="text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] md:hidden">
-          Menu
-        </Link>
+        <details className="group relative md:hidden">
+          <summary className="flex cursor-pointer list-none items-center gap-1.5 text-[16px] font-semibold leading-[1.2] tracking-[-0.03em] marker:hidden">
+            Menu
+            <span className="grid gap-[3px]">
+              <span className="h-px w-3 bg-black" />
+              <span className="h-px w-3 bg-black" />
+            </span>
+          </summary>
+          <div className="absolute right-0 top-[31px] grid min-w-[170px] gap-3 border border-black/10 bg-white p-4 text-[14px] font-semibold leading-none shadow-sm">
+            {navItems.map((link) => (
+              <Link key={link.label} href={link.href} className="hover:opacity-60">
+                {link.label}
+              </Link>
+            ))}
+            <Link href="/contact" className="hover:opacity-60">
+              Contact
+            </Link>
+          </div>
+        </details>
       </Container>
     </header>
   );
@@ -81,7 +99,7 @@ export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
           <div className="max-w-[335px]">
             <p className="text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black">{footerCopy}</p>
             <div className="mt-[30px]">
-              <Pill href="/contact">Schedule a call</Pill>
+              <Pill href={bookingHref}>Schedule a call</Pill>
             </div>
           </div>
           <FooterList
@@ -107,7 +125,7 @@ export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
             items={[
               { label: "LinkedIn", href: "https://www.linkedin.com/company/humaneframes" },
               { label: "Instagram", href: "https://www.instagram.com/humaneframes" },
-              { label: "Facebook", href: "https://www.facebook.com/humaneframes" },
+              { label: "Facebook", href: "https://www.facebook.com/share/18fKMQJGyB/" },
             ]}
           />
         </div>

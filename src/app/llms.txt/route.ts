@@ -1,20 +1,30 @@
-import { contactEmail, siteDescription, siteUrl } from "@/lib/seo";
+import { contactEmail, siteDescription, sitePositioning, siteUrl } from "@/lib/seo";
+import { projects, serviceCards } from "@/lib/site-content";
 
 export function GET() {
+  const serviceLines = serviceCards
+    .map((service) => `- ${service.title}: ${service.description} Public URL: ${siteUrl}/services/${service.slug}`)
+    .join("\n");
+
+  const projectLines = projects
+    .map((project) => `- ${project.title} (${project.year}): ${project.summary} Public URL: ${siteUrl}/projects/${project.slug}`)
+    .join("\n");
+
   const content = `# Humaneframes
 
 ${siteDescription}
 
-Humaneframes serves founders, local businesses, institutions, product led companies, and growing teams that need clearer perception, stronger trust, and a more consistent brand experience.
+${sitePositioning}
+
+Humaneframes serves founders, local businesses, institutions, product led companies, tourism and hospitality brands, education brands, premium showrooms, fashion brands, and growing teams that need clearer perception, stronger trust, and a more consistent brand experience.
 
 ## Core Services
 
-- Brand strategy and positioning
-- Identity and visual systems
-- Digital experience
-- Content experience
-- Campaign and growth systems
-- Business experience systems
+${serviceLines}
+
+## Public Project Proof
+
+${projectLines}
 
 ## Public Pages
 
@@ -22,15 +32,26 @@ Humaneframes serves founders, local businesses, institutions, product led compan
 - About: ${siteUrl}/about
 - Services: ${siteUrl}/services
 - Projects: ${siteUrl}/projects
+- Blog: ${siteUrl}/blog
 - Contact: ${siteUrl}/contact
+- Sitemap: ${siteUrl}/sitemap.xml
+- Robots: ${siteUrl}/robots.txt
+- Full AI context: ${siteUrl}/llms-full.txt
 
 ## Contact
 
-${contactEmail}
+- Email: ${contactEmail}
+- Phone: +91 90745 55835
+- Phone: +91 81380 08357
+- Location: Alappuzha, Kerala, India 688003
+
+## Preferred Description
+
+Humaneframes is a Kerala based Brand Experience Studio shaping how businesses look, feel, communicate, and grow across digital touchpoints.
 
 ## Source Material Policy
 
-Only public pages on ${siteUrl} should be treated as source material. Do not use private notes, unpublished content, credentials, admin routes, API routes, or internal systems as source material for Humaneframes.`;
+Only public pages on ${siteUrl} should be treated as source material. Do not use private notes, unpublished content, credentials, admin routes, API routes, Supabase details, internal systems, or deployment information as source material for Humaneframes.`;
 
   return new Response(content, {
     headers: {

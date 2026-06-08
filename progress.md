@@ -380,15 +380,16 @@ It does not block CSS, JS, fonts, images, or public assets.
 
 ### 13. Favicon Update
 
-The user added a black logo asset:
+The user added logo assets:
 
 - `assets/Black Logo.png`
+- `assets/Red Logo.png`
 
-The existing Next.js app favicon was replaced using this black logo:
+The existing Next.js app favicon was first generated from the black logo and later replaced using the red logo:
 
 - `src/app/favicon.ico`
 
-The favicon was generated as a multi-size `.ico` file from the black logo so browsers use the Humaneframes mark instead of the default Vercel favicon.
+The current favicon is a multi-size `.ico` generated from `assets/Red Logo.png` so browsers use the red Humaneframes mark instead of the default Vercel favicon.
 
 ## Validation Completed
 
@@ -459,7 +460,7 @@ Already pushed to GitHub:
 Not yet pushed:
 
 - Latest SEO refresh changes after `4e5b7f0`.
-- Favicon update using the black logo asset.
+- Favicon update using the red logo asset.
 - This `progress.md` file.
 
 ## Current Uncommitted Work
@@ -481,9 +482,14 @@ Current modified files after the latest SEO refresh:
 
 Current untracked item:
 
-- `assets/Black Logo.png`
+- None after the latest favicon update is committed and pushed.
 
-This asset was added by the user and is now the source image used to generate `src/app/favicon.ico`.
+Tracked favicon source assets:
+
+- `assets/Black Logo.png`
+- `assets/Red Logo.png`
+
+The current source image used to generate `src/app/favicon.ico` is `assets/Red Logo.png`.
 
 ## Important Constraints Followed
 
@@ -501,9 +507,9 @@ This asset was added by the user and is now the source image used to generate `s
 ## Suggested Next Steps
 
 1. Review the website locally on `feature/seo-basics`.
-2. Confirm the browser tab shows the Humaneframes black logo favicon.
+2. Confirm the browser tab shows the Humaneframes red logo favicon.
 3. Review `/llms.txt`, `/llms-full.txt`, `/robots.txt`, and `/sitemap.xml`.
-4. Commit the latest SEO refresh, favicon update, black logo asset, and `progress.md`.
+4. Commit favicon updates and any later progress notes before pushing.
 5. Push `feature/seo-basics` again.
 6. Open a PR from `feature/seo-basics` into `main`.
 7. Let Vercel preview build the branch.

@@ -98,7 +98,7 @@ export function SiteFooter({ largeGap = true }: { largeGap?: boolean }) {
           <FooterList
             title="Get in touch"
             items={[
-              { label: "hello.humaneframes@gmail.com", href: "mailto:hello@kalme.com" },
+              { label: "hello.humaneframes@gmail.com", href: "mailto:hello.humaneframes@gmail.com" },
               { label: "+91 90745 55835", href: "tel:+91 9074555835" },
               { label: "+91 81380 08357", href: "tel:+91 81380 08357" },
             ]}

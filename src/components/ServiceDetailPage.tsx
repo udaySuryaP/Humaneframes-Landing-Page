@@ -47,8 +47,8 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
               </div>
             </div>
             <aside className="bg-white px-[22px] py-[24px] md:w-full md:max-w-[365px] md:justify-self-end md:px-[28px] md:py-[32px] lg:min-h-[510px] lg:px-[30px] lg:py-[34px]">
-              <h2 className="text-[18px] font-semibold leading-[1.18] tracking-[-0.035em] md:text-[20px] lg:text-[22px]">{service.title} Package</h2>
-              <h3 className="mt-[30px] text-[12px] font-medium leading-[1.35] tracking-[-0.03em] md:text-[14px]">What&apos;s include:</h3>
+              <h2 className="text-[18px] font-semibold leading-[1.18] tracking-[-0.035em] md:text-[20px] lg:text-[22px]">{service.packageTitle}</h2>
+              <h3 className="mt-[30px] text-[12px] font-medium leading-[1.35] tracking-[-0.03em] md:text-[14px]">What&apos;s included:</h3>
               <ul className="mt-[16px] space-y-[14px] text-[11px] font-medium leading-[1.35] tracking-[-0.03em] text-[#4f4f4f] md:text-[13px]">
                 {service.includes.map((item) => (
                   <li key={item} className="flex gap-[13px]">

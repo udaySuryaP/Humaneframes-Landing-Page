@@ -17,14 +17,14 @@ export default function ServicesPage() {
                 Our Services
               </h1>
               <p className="mt-[16px] max-w-[170px] text-[13px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f] md:mt-[36px] md:max-w-[180px] md:text-[16px] lg:mt-[50px] lg:max-w-[200px] lg:text-[18px]">
-                Creative services that build brands, products, and presence
+                Services built to shape complete brand experiences.
               </p>
             </div>
             <div className="md:pt-[72px] lg:pt-[102px]">
               <p className="max-w-[740px] text-[13px] font-semibold leading-[1.25] tracking-[-0.03em] text-[#4f4f4f] md:text-[18px] lg:text-[20px]">
-                We are a multidisciplinary brand and digital growth company, built to help
-                businesses take the next step through strategy, creative execution, and measurable
-                results.
+                Humaneframes helps businesses build the systems behind how they are seen,
+                experienced, trusted, and remembered. Our services cover strategy, identity,
+                websites, content, campaigns, and business experience support.
               </p>
               <div className="mt-[16px] md:mt-[24px]">
                 <ServicesPill href="/contact">Start a project</ServicesPill>

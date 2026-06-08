@@ -385,11 +385,11 @@ The user added logo assets:
 - `assets/Black Logo.png`
 - `assets/Red Logo.png`
 
-The existing Next.js app favicon was first generated from the black logo and later replaced using the red logo:
+The existing Next.js app favicon was generated from the black logo:
 
 - `src/app/favicon.ico`
 
-The current favicon is a multi-size `.ico` generated from `assets/Red Logo.png` so browsers use the red Humaneframes mark instead of the default Vercel favicon.
+The current favicon is a multi-size `.ico` generated from `assets/Black Logo.png` so browsers use the black Humaneframes mark instead of the default Vercel favicon.
 
 ## Validation Completed
 
@@ -460,7 +460,7 @@ Already pushed to GitHub:
 Not yet pushed:
 
 - Latest SEO refresh changes after `4e5b7f0`.
-- Favicon update using the red logo asset.
+- Favicon update using the black logo asset.
 - This `progress.md` file.
 
 ## Current Uncommitted Work
@@ -489,7 +489,7 @@ Tracked favicon source assets:
 - `assets/Black Logo.png`
 - `assets/Red Logo.png`
 
-The current source image used to generate `src/app/favicon.ico` is `assets/Red Logo.png`.
+The current source image used to generate `src/app/favicon.ico` is `assets/Black Logo.png`.
 
 ## Important Constraints Followed
 
@@ -507,7 +507,7 @@ The current source image used to generate `src/app/favicon.ico` is `assets/Red L
 ## Suggested Next Steps
 
 1. Review the website locally on `feature/seo-basics`.
-2. Confirm the browser tab shows the Humaneframes red logo favicon.
+2. Confirm the browser tab shows the Humaneframes black logo favicon.
 3. Review `/llms.txt`, `/llms-full.txt`, `/robots.txt`, and `/sitemap.xml`.
 4. Commit favicon updates and any later progress notes before pushing.
 5. Push `feature/seo-basics` again.

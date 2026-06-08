@@ -51,16 +51,16 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
-            <form className="grid min-w-0 gap-px bg-black/5">
-              <Field label="Name" />
-              <Field label="Email" />
-              <Field label="Phone" />
+            <form action="mailto:hello.humaneframes@gmail.com" method="post" encType="text/plain" className="grid min-w-0 gap-px bg-black/5">
+              <Field label="Name" name="name" required />
+              <Field label="Email" name="email" type="email" required />
+              <Field label="Phone" name="phone" type="tel" />
               <label className="min-w-0 bg-white p-5 md:p-8">
                 <span className="mb-5 block text-[12px] leading-none text-black/55">Message</span>
-                <textarea className="h-44 min-w-0 w-full resize-none bg-transparent text-[18px] outline-none" />
+                <textarea name="message" required className="h-44 min-w-0 w-full resize-none bg-transparent text-[18px] outline-none" />
               </label>
               <div className="min-w-0 bg-white p-5 md:p-8">
-                <button type="button" className="inline-flex h-[39px] items-center gap-2 rounded-full bg-black px-4 text-[16px] font-medium leading-[1.2] text-white">
+                <button type="submit" className="inline-flex h-[39px] items-center gap-2 rounded-full bg-black px-4 text-[16px] font-medium leading-[1.2] text-white">
                   Submit message
                   <span className="h-1.5 w-1.5 rounded-full bg-[#fd2400]" />
                 </button>
@@ -74,11 +74,11 @@ export default function ContactPage() {
   );
 }
 
-function Field({ label }: { label: string }) {
+function Field({ label, name, type = "text", required = false }: { label: string; name: string; type?: string; required?: boolean }) {
   return (
     <label className="min-w-0 bg-white p-5 md:p-8">
       <span className="mb-5 block text-[12px] leading-none text-black/55">{label}</span>
-      <input className="min-w-0 w-full bg-transparent text-[18px] outline-none" />
+      <input name={name} type={type} required={required} className="min-w-0 w-full bg-transparent text-[18px] outline-none" />
     </label>
   );
 }

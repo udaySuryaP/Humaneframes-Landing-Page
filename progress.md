@@ -449,6 +449,55 @@ Whitespace check:
 - `git diff --check` passed.
 - Git showed Windows line-ending normalization warnings only.
 
+### Full Website Audit
+
+Completed after the black favicon update.
+
+Checks run:
+
+- `git status --short --branch`
+- `git branch -vv`
+- `git branch -r -vv`
+- `npm.cmd audit --audit-level=low`
+- `npm.cmd audit --omit=dev --audit-level=low`
+- `npm.cmd outdated`
+- `npm.cmd ls --depth=0`
+- Secret pattern scan across tracked source files.
+- Risky code pattern scan for environment exposure, console logs, raw HTML injection, external links, forms, and headings.
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- Local production HTTP checks for core routes, dynamic routes, `robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, 404 behavior, and favicon serving.
+
+Audit results:
+
+- No npm vulnerabilities found.
+- No production dependency vulnerabilities found.
+- No secrets found in the scanned repository content.
+- Lint passed.
+- Production build passed.
+- Core public routes returned `200`.
+- Missing route returned `404`.
+- `robots.txt` returned `200` and includes expected disallow rules and sitemap URL.
+- `sitemap.xml` returned `200` and includes service, project, blog, and legal routes.
+- `llms.txt` and `llms-full.txt` returned `200` and include the expected Humaneframes AI context.
+- `favicon.ico` returned `200` as `image/x-icon`.
+- JSON-LD usage was reviewed. It uses `JSON.stringify` on static local schema data.
+
+Issue found and fixed:
+
+- The contact form had fields and a visible submit button, but the button was `type="button"` with no submit behavior.
+- The form now submits through `mailto:hello.humaneframes@gmail.com` using named fields.
+- Name, email, and message are required.
+- Email uses `type="email"`.
+- Phone uses `type="tel"`.
+- The submit button now uses `type="submit"`.
+
+Residual notes:
+
+- The site has no backend contact API or transactional email provider. The current contact form uses the safest static-site fallback available without adding backend complexity.
+- Some packages have newer non-required releases according to `npm outdated`, but no audit vulnerability requires an upgrade at this time.
+- `node_modules`, `.next`, and `qa` remain ignored local artifacts.
+
 ## GitHub Push Status
 
 Already pushed to GitHub:

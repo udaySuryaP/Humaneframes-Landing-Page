@@ -106,7 +106,7 @@ export default function ProjectDetailPage({ slug }: { slug: string }) {
 function ProjectMeta({ project, detail }: { project: Project; detail?: ProjectDetail }) {
   const items = [
     ["", project.year],
-    ["Service", project.scope.slice(0, 2).join(", ")],
+    ["Services", project.scope.join(", ")],
     ["Industry", detail?.industry ?? project.scope.at(-1) ?? "Brand Growth"],
   ];
 
@@ -195,13 +195,13 @@ function ProjectCTA() {
       <Container>
         <div className="mx-auto max-w-[550px] text-center">
           <p className="mb-[10px] text-[12px] font-semibold uppercase leading-[1.4] text-[#4f4f4f] md:text-[14px]">
-            <span className="text-[#fd2400]">[</span>Your future, together<span className="text-[#fd2400]">]</span>
+            <span className="text-[#fd2400]">[</span>Your next brand chapter<span className="text-[#fd2400]">]</span>
           </p>
           <h2 className="text-[30px] font-semibold leading-[1.16] tracking-[-0.04em] md:text-[46px] xl:text-[54px]">
-            Ready to build a bold, purposeful brand?
+            Ready to make your business look as strong as it actually is?
           </h2>
           <p className="mx-auto mt-[20px] max-w-[550px] text-[12px] font-medium leading-[1.4] tracking-[-0.03em] text-[#4f4f4f] md:text-[16px]">
-            Have questions? We are ready to help you clarify what to do next, together, one step forward.
+            If your business has value but your brand does not communicate it clearly, we can help you fix the gap.
           </p>
           <div className="mt-[30px] flex flex-wrap justify-center gap-[10px]">
             <DetailPill href="/contact">Start your project</DetailPill>

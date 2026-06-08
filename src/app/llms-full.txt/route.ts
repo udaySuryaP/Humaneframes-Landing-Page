@@ -5,13 +5,13 @@ export function GET() {
 
 ${siteDescription}
 
-Humaneframes is based in Kerala and works with businesses that need brand clarity, digital credibility, stronger content systems, and practical growth infrastructure. The studio combines strategy, design, technology, content, social media, paid campaigns, and workflow automation into one connected digital presence.
+Humaneframes is based in Kerala and works with businesses that need brand clarity, digital credibility, stronger content systems, and practical growth infrastructure. The studio combines strategy, identity, digital presence, content, campaigns, and business experience support into one connected system.
 
 ## Who Humaneframes Serves
 
 - Founders launching new brands
 - Local businesses ready to look more premium and credible
-- Product and service companies rebuilding their digital presence
+- Product and service companies rebuilding their brand experience
 - Teams that need consistent content, social media, and campaign execution
 - Businesses that need websites, apps, dashboards, or automation systems
 
@@ -21,17 +21,13 @@ Brand strategy and positioning: defining how a business should be understood, di
 
 Identity and visual systems: logo systems, typography, color, tone of voice, brand foundations, and digital identity rules.
 
-Website and app development: responsive websites, ecommerce builds, SaaS interfaces, custom dashboards, and content-managed digital platforms.
+Digital experience: websites, ecommerce stores, landing pages, CMS systems, admin systems, and web app interfaces built around clarity, trust, and customer action.
 
-Social media management: organic strategy, content planning, content creation, account handling, community management, and performance reporting.
+Content experience: content strategy, social media management, reel direction, carousel and static content, storytelling, and consistent audience education.
 
-Content creation and production: brand narrative, campaign copy, reels, video assets, founder storytelling, and platform-ready creative systems.
+Campaign and growth systems: campaign planning, Meta campaigns, Google campaigns, ad creatives, launch support, and performance review.
 
-Digital marketing and campaign systems: Meta and Google campaigns, ad creatives, campaign landing pages, tracking, reporting, and optimization.
-
-AI automation and workflow systems: practical systems for intake, reporting, follow-ups, content operations, and internal workflow automation.
-
-Complete digital presence setup: coordinated brand, website, social, content, campaign, and automation work for businesses that want one partner.
+Business experience systems: customer journey mapping, workflow support, AI automation support, lead and enquiry systems, and business touchpoint review.
 
 ## Public Project Proof
 

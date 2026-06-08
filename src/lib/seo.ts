@@ -4,7 +4,7 @@ export const siteUrl = "https://humaneframes.com";
 
 export const siteName = "Humaneframes";
 
-export const siteTitle = "Humaneframes — Brand Experience Studio";
+export const siteTitle = "Humaneframes | Brand Experience Studio";
 
 export const siteDescription =
   "Humaneframes is an independent brand experience studio helping businesses shape how they are seen, experienced, trusted, and remembered across digital touchpoints.";
@@ -96,11 +96,9 @@ export const professionalServiceSchema = {
   serviceType: [
     "Brand strategy and positioning",
     "Identity and visual systems",
-    "Website and app development",
-    "Social media management",
-    "Content creation and production",
-    "Digital marketing and campaign systems",
-    "AI automation and workflow systems",
-    "Complete digital presence setup",
+    "Digital experience",
+    "Content experience",
+    "Campaign and growth systems",
+    "Business experience systems",
   ],
 };

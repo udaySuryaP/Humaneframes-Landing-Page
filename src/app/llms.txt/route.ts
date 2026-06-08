@@ -5,18 +5,16 @@ export function GET() {
 
 ${siteDescription}
 
-Humaneframes serves founders, local businesses, product-led companies, and growing teams that need a clearer brand, sharper digital presence, and measurable growth systems.
+Humaneframes serves founders, local businesses, institutions, product led companies, and growing teams that need clearer perception, stronger trust, and a more consistent brand experience.
 
 ## Core Services
 
 - Brand strategy and positioning
 - Identity and visual systems
-- Website and app development
-- Social media management
-- Content creation and production
-- Digital marketing and campaign systems
-- AI automation and workflow systems
-- Complete digital presence setup
+- Digital experience
+- Content experience
+- Campaign and growth systems
+- Business experience systems
 
 ## Public Pages
 

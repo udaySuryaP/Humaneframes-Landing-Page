@@ -10,50 +10,50 @@ const services = [
   {
     number: "01",
     slug: "brand-design",
-    title: "Brand Design",
+    title: "Brand Strategy and Positioning",
     overview:
-      "We build the complete foundation of your brand, from the visual identity people see to the strategy that drives its growth. Every element is designed to be distinct, consistent, and built to scale with your business.",
-    capabilities: ["Brand Identity", "Brand Foundation", "Brand Systems", "Growth Strategy", "Visual Identity and Uniformity"],
+      "We help businesses define what they stand for, who they serve, how they should be positioned, and why people should choose them before design, content, or campaigns begin.",
+    capabilities: ["Brand Positioning", "Audience Clarity", "Brand Foundation", "Messaging Strategy", "Market Direction"],
   },
   {
     number: "02",
     slug: "ui-ux-design",
-    title: "UI/UX Design",
+    title: "Identity and Visual Systems",
     overview:
-      "We research, design, and prototype digital interfaces that make sense from the first interaction and support the way people actually move through your product.",
-    capabilities: ["User Research", "Wireframing and Prototyping", "Figma Design", "Design Systems", "Experience Design"],
+      "We create visual identity systems that make businesses look credible, consistent, and easy to recognize across every digital and physical touchpoint.",
+    capabilities: ["Logo System", "Typography and Color Direction", "Visual Language", "Brand Guidelines", "Social and Digital Identity"],
   },
   {
     number: "03",
     slug: "web-and-app-development",
-    title: "Web and App Development",
+    title: "Digital Experience",
     overview:
-      "We build websites and applications that load fast, look sharp, and convert visitors into customers while staying easy for your team to grow.",
-    capabilities: ["SaaS Development", "Mobile App Development", "Ecommerce Development", "Custom Panels and Dashboards", "CMS Development"],
+      "We design and build websites and digital platforms that make your business easier to understand, trust, and act on.",
+    capabilities: ["Business Websites", "Ecommerce Websites", "Landing Pages", "CMS and Admin Systems", "Web App Interfaces"],
   },
   {
     number: "04",
     slug: "content-and-storytelling",
-    title: "Content and Storytelling",
+    title: "Content Experience",
     overview:
-      "We find the story at the centre of your brand and build content that connects with your audience, communicates clearly, and drives action.",
-    capabilities: ["Brand Narrative", "Website and Campaign Copywriting", "Content Production", "Founder Storytelling", "Short Form and Long Form Content"],
+      "We build content systems that help businesses communicate consistently, educate their audience, build trust, and stay visible with purpose.",
+    capabilities: ["Content Strategy", "Social Media Management", "Reel and Video Direction", "Carousel and Static Content", "Brand Storytelling"],
   },
   {
     number: "05",
     slug: "ads-and-growth",
-    title: "Ads and Growth",
+    title: "Campaign and Growth Systems",
     overview:
-      "We plan, launch, and optimise paid campaigns that put your brand in front of the right people at the right time, with every rupee tracked and tested.",
-    capabilities: ["Meta Campaigns", "Google Ads", "Video Ads and Reels", "Digital Ad Creatives", "Product Photography and Videography"],
+      "We help businesses plan, launch, and improve campaigns that support visibility, enquiries, launches, and customer action through the right message, audience, creative, and follow through.",
+    capabilities: ["Campaign Planning", "Meta Campaigns", "Google Campaigns", "Ad Creatives", "Performance Review"],
   },
 ];
 
 const stats = [
-  { value: "8+", label: "Businesses Transformed" },
-  { value: "1M+", label: "Views Generated" },
-  { value: "180%", label: "Avg. Engagement Growth" },
-  { value: "40%", label: "Growth in Monthly Leads" },
+  { value: "8+", label: "Businesses shaped across digital touchpoints" },
+  { value: "1M+", label: "Views generated across client content" },
+  { value: "525%", label: "Recorded reach growth for education client" },
+  { value: "98K+", label: "Travel brand reach generated from zero presence" },
 ];
 
 const works = [
@@ -65,8 +65,8 @@ const works = [
   },
   {
     slug: "destrezzza-transforming-a-premium-brand-into-a-premium-experience",
-    year: "2025",
-    title: "Destrezzza Transforming a Premium Brand Into a Premium Experience",
+    year: "2026",
+    title: "Destrezzza Transforming a Premium Business Into a Premium Experience",
     image: "/images/current-site/kfC4SyMtgSdc4B3CsWx102i4nrA.jpg",
   },
   {
@@ -111,12 +111,16 @@ function Hero() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <h1 className="max-w-[850px] text-[clamp(42px,5.05vw,64px)] font-semibold leading-[1.2]">
-              We are an independent brand and digital company crafting bold identities and experiences that drive real business growth
+              Your business is
+              <br />
+              better than your brand.
+              <br />
+              we fix that
             </h1>
             <div className="mt-[30px] flex flex-col gap-[45px] md:mt-[50px] md:flex-row md:items-start md:justify-between md:gap-10">
-              <div className="order-2 max-w-[325px] md:order-1">
+              <div className="order-2 max-w-[325px] md:order-1 lg:max-w-[430px]">
                 <p className="text-[18px] font-medium leading-[1.4] text-black">
-                  From brand identity to digital experiences and growth strategy, we design, build, and scale everything your brand needs to stand out and perform under one roof.
+                  Humaneframes is a Brand Experience Studio helping businesses shape how they are seen, experienced, trusted, and remembered across digital touchpoints. We build the strategy, identity, website, content, and growth systems your business needs to look credible and grow with clarity.
                 </p>
                 <div className="mt-[30px] flex items-center gap-[10px]">
                   <Pill href="/contact">Start a project</Pill>
@@ -165,7 +169,7 @@ function HeroShowreel() {
       <p className="mt-[5px] text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">
         Humaneframes showreel
         <br />
-        (Clients &mdash; 2025/2026)
+        Clients 2025 and 2026
       </p>
     </motion.div>
   );
@@ -193,7 +197,7 @@ function Intro() {
       <Container>
         <SectionKicker>Who we are</SectionKicker>
         <h2 className="max-w-[1205px] text-[clamp(36px,4.27vw,54px)] font-semibold leading-[1.2]">
-          We combine creativity, data-driven strategies, and authentic storytelling to connect your brand with the right audience and drive measurable business results.
+          We turn business value into a brand experience people can see, understand, trust, and remember.
         </h2>
         <div className="mt-[50px] grid gap-[50px] lg:grid-cols-[minmax(0,578px)_minmax(360px,578px)] lg:items-end lg:justify-between">
           <div className="relative h-[320px] w-full overflow-hidden bg-neutral-200 md:h-[385px]">
@@ -207,7 +211,7 @@ function Intro() {
           </div>
           <div className="w-full max-w-[578px] justify-self-end pb-0">
             <p className="text-[18px] font-medium leading-[1.45] tracking-[-0.03em] text-[#4f4f4f]">
-              Humaneframes is a brand and digital experience company based in Kerala, built for founders and businesses seeking more than just a vendor. We unite strategy, design, and technology into one integrated system that builds your brand holistically, not in fragmented pieces. Every decision we make is guided by one outcome: measurable business growth.
+              Humaneframes is an independent Brand Experience Studio based in Kerala. We work with businesses that already have value, and with new businesses that need to build that value from the start. We bring strategy, identity, digital experience, content, and growth together into one clear system. Every decision we make asks whether it improves how the business is experienced by the right people.
             </p>
             <div className="mt-[30px]">
               <Pill href="/about">More about us</Pill>
@@ -237,12 +241,12 @@ function Services() {
           <div>
             <SectionKicker>Expertise</SectionKicker>
             <h2 className="max-w-[550px] text-[clamp(36px,4.27vw,54px)] font-semibold leading-[1.2]">
-              Solutions built to scale your brand.
+              Brand experience systems built for businesses that need to be taken seriously.
             </h2>
           </div>
           <div>
             <p className="mb-[20px] text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">
-              We are a multidisciplinary company with one clear mission: to give your brand everything it needs to grow, all in one place, with one team that owns the entire journey.
+              We do not treat branding, websites, content, and growth as separate tasks. We connect them into one system so every touchpoint says the same thing about your business.
             </p>
             <Pill href="/services">See all services</Pill>
           </div>
@@ -308,10 +312,10 @@ function Work() {
         <div className="mx-auto mb-[50px] max-w-[550px] text-center">
           <SectionKicker className="mb-[10px]">Projects</SectionKicker>
           <h2 className="text-[clamp(36px,4.27vw,54px)] font-semibold leading-[1.2]">
-            Selected work that speaks for itself
+            Selected work shaped around business perception, trust, and growth.
           </h2>
           <p className="mx-auto mt-[20px] max-w-[550px] text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">
-            Our work combines creativity, strategy, and data to deliver digital marketing solutions that drive real growth and meaningful connections.
+            Our work helps businesses move from unclear, inconsistent, or invisible digital presence to a stronger brand experience across web, content, social, and customer touchpoints.
           </p>
         </div>
         <div className="mx-auto grid max-w-[1206px] gap-[20px] md:grid-cols-2">
@@ -354,12 +358,12 @@ function CTA() {
     <section id="contact" className="overflow-hidden py-[100px]">
       <Container>
         <div className="mx-auto max-w-[550px] text-center">
-          <SectionKicker className="mb-[10px]">Your future, together</SectionKicker>
+          <SectionKicker className="mb-[10px]">Your next brand chapter</SectionKicker>
           <h2 className="text-[clamp(36px,4.27vw,54px)] font-semibold leading-[1.2]">
-            Ready to build a bold, purposeful brand?
+            Ready to make your business look as strong as it actually is?
           </h2>
           <p className="mx-auto mt-[20px] max-w-[550px] text-[16px] font-medium leading-[1.4] text-[#4f4f4f]">
-            Have questions? We are ready to help you clarify what to do next, together, one step forward.
+            If your business has value but your brand does not communicate it clearly, we can help you fix the gap. Let us build the experience your customers should have when they discover, judge, and choose your business.
           </p>
           <div className="mt-[30px] flex flex-wrap justify-center gap-[10px]">
             <Pill href="/contact">Start your project</Pill>

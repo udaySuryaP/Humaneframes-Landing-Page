@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Learn how Humaneframes combines strategy, design, and technology to help brands build clearer digital experiences and measurable business growth.",
+    "Learn how Humaneframes shapes how businesses are seen, experienced, trusted, and remembered through strategy, identity, digital presence, content, and growth systems.",
   path: "/about",
 });
 

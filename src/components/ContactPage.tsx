@@ -1,8 +1,8 @@
 import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 
 const details = [
-  ["Hours", "Monday - Saturday", "09:00 AM - 06:00 PM"],
-  ["Location", "Alappuzha, Kerala,India - 688003"],
+  ["Hours", "Monday to Saturday", "09:00 AM to 06:00 PM"],
+  ["Location", "Alappuzha, Kerala", "India 688003"],
   ["Phone", "+91 90745 55835", "+91 81380 08357"],
   ["Email Address", "hello.humaneframes@gmail.com"],
 ];
@@ -19,14 +19,14 @@ export default function ContactPage() {
                 Get in touch
               </h1>
               <p className="mt-14 max-w-[150px] text-[13px] leading-[1.18] tracking-[-0.035em] text-black/75">
-                Let&apos;s build something meaningful.
+                Tell us what you are trying to build.
               </p>
             </div>
             <div className="max-w-[650px] self-end">
               <p className="text-[23px] font-semibold leading-[1.06] tracking-[-0.06em] text-black/82">
-                Have a question, need more information, or want to book an appointment? We&apos;re here
-                to help! Fill out the form below or reach out to us directly-we&apos;ll get back to you
-                as soon as possible.
+                Have a business that deserves to look more credible, consistent, and trusted online?
+                Tell us where your brand is right now and what you are trying to build. We will help
+                you understand the next right step across strategy, identity, website, content, or growth.
               </p>
               <div className="mt-5">
                 <Pill href="https://cal.com/humaneframes/30min">Book an intro call</Pill>

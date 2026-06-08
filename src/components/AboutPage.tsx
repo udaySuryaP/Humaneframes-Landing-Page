@@ -4,23 +4,23 @@ import { Container, Pill, SiteFooter, SiteNav } from "@/components/SiteChrome";
 const values = [
   {
     number: "01",
-    title: "Clarity Over Noise",
-    body: "Every project starts with understanding. We strip away the unnecessary and focus on what truly matters: the idea, the story, and the solution.",
+    title: "Clarity Before Creativity",
+    body: "We do not start with designs, posts, or campaigns. We start by understanding the business, the audience, the gap, and the perception that needs to change.",
   },
   {
     number: "02",
-    title: "Collaboration at the Core",
-    body: "We believe the best ideas come from open minds and shared perspectives. At Humaneframes, every voice matters, with the freedom to challenge, explore, and create.",
+    title: "Experience Over Decoration",
+    body: "A brand is not just how it looks. It is how people feel when they discover it, explore it, talk to it, buy from it, and remember it.",
   },
   {
     number: "03",
-    title: "Design With Impact",
-    body: "Good design does more than decorate; it solves problems. We approach every project with the belief that our craft should drive real growth for founders, teams, and brands.",
+    title: "Systems Over Random Output",
+    body: "We do not create isolated assets. We build connected systems for identity, content, websites, campaigns, and customer touchpoints.",
   },
   {
     number: "04",
-    title: "Balance and Humanity",
-    body: "We value people as much as the work. Creativity thrives when there's room to breathe, reflect, and recharge.",
+    title: "Real Business Context",
+    body: "We work around the actual stage of the business. Some brands need to launch from zero. Some need to look more premium. Some need visibility. Some need trust.",
   },
 ];
 
@@ -42,16 +42,16 @@ function Hero() {
           <div>
             <h1 className="text-[clamp(42px,5vw,64px)] font-semibold leading-[1.2]">About</h1>
             <p className="mt-16 max-w-[170px] text-[16px] font-medium leading-[1.35] tracking-[-0.03em] text-black/70">
-              Where strategy
+              Brand Experience
               <br />
-              meets growth
+              Studio
             </p>
           </div>
           <div className="max-w-[735px] justify-self-end lg:pt-[116px]">
             <p className="text-[clamp(20px,1.8vw,25px)] font-semibold leading-[1.16] tracking-[-0.045em] text-black/78">
-              We do more than market; we create meaningful digital experiences that build stronger
-              brands and drive measurable growth. Based in Kerala, Humaneframes combines strategy,
-              design, and technology to help businesses stand out and scale with confidence.
+              We shape how businesses are seen, experienced, trusted, and remembered. Humaneframes is
+              a Brand Experience Studio based in Kerala, helping businesses build stronger perception
+              through strategy, identity, digital presence, content, and growth systems.
             </p>
             <div className="mt-5">
               <Pill href="/services">Our services</Pill>
@@ -95,7 +95,7 @@ function Bento() {
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-7 text-white">
               <p className="mb-6 text-[11px] font-bold leading-none tracking-[-0.03em]">Humaneframes.</p>
               <h2 className="max-w-[440px] text-[23px] font-bold leading-[1.02] tracking-[-0.055em]">
-                Scaling Brands Through Strategy and Digital Excellence
+                Building brand experiences that match the real value of the business.
               </h2>
             </div>
           </ImageCard>
@@ -104,19 +104,19 @@ function Bento() {
 
           <div className="bg-white p-8">
             <h3 className="max-w-[280px] text-[21px] font-bold leading-[1.02] tracking-[-0.055em]">
-              Empowering Brands with Digital Excellence
+              525 percent recorded reach growth for a school brand within the first content cycle.
             </h3>
-            <p className="mt-24 text-[68px] font-semibold leading-none tracking-[-0.065em]">40%</p>
+            <p className="mt-24 text-[68px] font-semibold leading-none tracking-[-0.065em]">525%</p>
             <p className="mt-3 max-w-[240px] text-[16px] font-medium leading-[1.35] tracking-[-0.03em] text-black/65">
-              average increase in client engagement within 3 months
+              recorded reach growth for education client
             </p>
           </div>
 
           <div className="bg-black p-8 text-white">
             <h3 className="max-w-[315px] text-[23px] font-bold leading-[1.02] tracking-[-0.055em]">
-              Driving 1M+ views across social, web, and performance campaigns.
+              Strategy, identity, digital presence, content, and growth working as one system.
             </h3>
-            <p className="mt-28 text-[68px] font-semibold leading-none tracking-[-0.065em]">1M</p>
+            <p className="mt-28 text-[68px] font-semibold leading-none tracking-[-0.065em]">1M+</p>
           </div>
 
           <ImageCard src="/images/about/l76m0lr2EgbRud7R5HwNGQxO4Zs.jpg" alt="Team reviewing digital strategy" className="min-h-[320px]" />
@@ -134,14 +134,13 @@ function Values() {
           <div>
             <Kicker>Our Values</Kicker>
             <h2 className="max-w-[430px] text-[clamp(42px,5vw,58px)] font-semibold leading-[1.02] tracking-[-0.07em]">
-              Values that
+              Principles that
               <br />
-              drive real results
+              shape the way we build brands.
             </h2>
           </div>
           <p className="max-w-[325px] justify-self-end text-[16px] font-medium leading-[1.4] tracking-[-0.03em] text-black/70">
-            Our core values guide every decision, shaping how we work to deliver strong results and
-            lasting partnerships.
+            Our values guide how we think, design, communicate, and support every business we work with.
           </p>
         </div>
 

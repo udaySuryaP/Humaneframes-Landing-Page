@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Explore Humaneframes services across brand strategy, identity design, UI/UX, website and app development, content, social media, ads, and growth systems.",
+    "Explore Humaneframes services for strategy, identity, digital experience, content experience, campaign systems, and business experience support.",
   path: "/services",
 });
 

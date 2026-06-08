@@ -23,8 +23,8 @@ export default function BlogPage() {
             </div>
             <div className="max-w-[650px] self-end">
               <p className="text-[23px] font-semibold leading-[1.06] tracking-[-0.06em] text-black/82">
-                Our blog is a hub for insights, tips, and industry trends in digital marketing and
-                social media.
+                Our blog is a hub for thinking on brand experience, digital presence, content,
+                customer trust, and business clarity.
               </p>
               <div className="mt-5">
                 <Pill href="/contact">Start a project</Pill>

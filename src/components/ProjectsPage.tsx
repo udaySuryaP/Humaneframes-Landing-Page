@@ -18,8 +18,10 @@ export default function ProjectsPage() {
             </div>
             <div className="max-w-[650px] self-end md:justify-self-end">
               <p className="text-[13px] font-semibold leading-[1.25] tracking-[-0.03em] text-black/82 md:text-[18px] md:leading-[1.2] xl:text-[24px] xl:leading-[1.16] xl:tracking-[-0.045em]">
-                Our work combines creativity, strategy, and data to deliver digital marketing
-                solutions that drive real growth and meaningful connections.
+                Our projects show how we help businesses improve how they are seen, experienced,
+                trusted, and remembered across digital touchpoints. From full brand launches to
+                websites, content systems, booking flows, and social growth, our work is built around
+                real business gaps.
               </p>
               <div className="mt-[12px] md:mt-5">
                 <ProjectsPill href="/contact">Start a project</ProjectsPill>

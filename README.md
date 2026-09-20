@@ -2,6 +2,8 @@
 
 Premium editorial landing page for Humaneframes, an independent brand and digital studio.
 
+[View the live site](https://humaneframes-landing-page.vercel.app)
+
 ## Stack
 
 - Next.js App Router
@@ -13,7 +15,7 @@ Premium editorial landing page for Humaneframes, an independent brand and digita
 ## Local Development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -24,4 +26,5 @@ Open `http://localhost:3000`.
 ```bash
 npm run lint
 npm run build
+npm audit --audit-level=high
 ```
